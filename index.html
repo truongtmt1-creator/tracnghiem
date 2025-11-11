@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm Trực Tuyến - Hà Huy Tập</title>
+    <style>
+        /* CSS Responsive & Centering */
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 0;
+            margin: 0;
+            background-color: #f4f4f9;
+            min-height: 100vh;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .container {
+            max-width: 800px;
+            width: 95%; 
+            margin: 20px auto; 
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-sizing: border-box; 
+        }
+
+        /* Đồng Hồ Đếm Ngược */
+        #quiz-header {
+            text-align: center; 
+            margin-bottom: 20px; 
+            display: none;
+            padding: 10px;
+            background-color: #ffe6e6; 
+            border-radius: 4px;
+        }
+
+        /* Form và Input */
+        #quiz-container { display: none; }
+        .form-group { margin-bottom: 15px; }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 12px; 
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px; 
+        }
+        #hoten {
+            background-color: #e9e9e9;
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.1em;
+        }
+        button:hover { background-color: #0056b3; }
+        .alert { color: red; margin-top: 10px; }
+
+        /* Hiển thị Câu hỏi */
+        .question {
+            border: 1px solid #ddd; 
+            padding: 15px; 
+            margin-bottom: 20px;
+            border-radius: 6px;
+            background-color: #fff;
+        }
+        .options input[type="radio"] {
+            width: auto;
+            margin-right: 8px;
+        }
+        .options label {
+            display: block; /* Đảm bảo mỗi lựa chọn là một dòng riêng */
+            font-weight: normal;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 98%;
+                margin: 10px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 style="text-align: center;">🛡️ Xác Nhận Thông Tin & Bắt Đầu Bài Kiểm Tra</h2>
+        <hr>
+
+        <div id="info-form">
+            <div class="form-group">
+                <label for="khoi">Khối:</label>
+                <select id="khoi">
+                    <option value="">Chọn Khối</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    </select>
+            </div>
+
+            <div class="form-group">
+                <label for="lop">Lớp:</label>
+                <select id="lop">
+                    <option value="">Chọn Lớp</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="stt">Số Thứ Tự (STT):</label>
+                <input type="number" id="stt" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hoten">Họ Tên:</label>
+                <input type="text" id="hoten" readonly placeholder="Tên sẽ tự động điền từ CSDL">
+            </div>
+
+            <div class="form-group" id="baikt-select-group">
+                <label for="baikt_id">Bài Kiểm Tra Hiện Có:</label>
+                <select id="baikt_id">
+                    <option value="">Vui lòng chọn Khối...</option>
+                </select>
+            </div>
+
+            <p class="alert" id="status-message"></p>
+
+            <button onclick="startQuiz()">BẮT ĐẦU LÀM BÀI</button>
+        </div>
+
+        <div id="quiz-header" style="text-align: center; margin-bottom: 20px; display: none;">
+            <h3>⏱️ Thời Gian Còn Lại: <span id="timer" style="color: red; font-size: 1.5em;">15:00</span></h3>
+        </div>
+
+        <div id="quiz-container">
+            </div>
+    </div>
+
+    <script src="quiz.js"></script> 
+</body>
+</html>
