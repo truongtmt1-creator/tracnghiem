@@ -170,8 +170,10 @@ function lookupName() {
 // Hàm bắt đầu bài kiểm tra
 async function startQuiz() {
     const statusMessage = document.getElementById('status-message');
-    const baiktId = DEFAULT_BAIKT_ID; // 🔥 SỬ DỤNG ID MẶC ĐỊNH
+    // 🔥 Sử dụng ID BÀI KIỂM TRA MẶC ĐỊNH đã được khai báo ở đầu file quiz.js
+    const baiktId = DEFAULT_BAIKT_ID; 
 
+    // 1. Kiểm tra xác thực học sinh
     if (!studentInfo.HoTen || studentInfo.HoTen.includes('Học sinh không hợp lệ')) {
         statusMessage.textContent = 'Vui lòng xác thực thông tin học sinh hợp lệ trước khi bắt đầu.';
         return;
@@ -180,39 +182,59 @@ async function startQuiz() {
     statusMessage.textContent = 'Đang tạo đề thi ngẫu nhiên...';
 
     try {
+        // 2. Gọi API để lấy đề thi
         const data = await callApi({ 
             action: 'getQuiz',
             Khoi: studentInfo.Khoi,
             BaiKT_ID: baiktId
         });
         
+        // 3. Kiểm tra số lượng câu hỏi trả về
         if (data.questions.length === 0) {
              throw new Error("Quiz configuration found, but no questions were selected. Check CauHinh sheet for ID: " + baiktId);
         }
-        
+
+        // 4. 🔥 XỬ LÝ VÀ HIỂN THỊ CẢNH BÁO TỪ SERVER (LOGIC MỚI)
+        if (data.warnings && data.warnings.length > 0) {
+            const warningMessage = '⚠️ CẢNH BÁO THIẾU CÂU HỎI (' + data.warnings.length + ' chủ đề):\n\n' + data.warnings.join('\n\n');
+            
+            // Dùng alert để đảm bảo người dùng/giáo viên nhìn thấy cảnh báo quan trọng này
+            alert(warningMessage); 
+            console.warn(warningMessage);
+            
+            // Hiển thị trên giao diện xác thực thông tin
+            statusMessage.innerHTML = '<span style="color:red; font-weight:bold;">' + data.warnings.length + ' CẢNH BÁO THIẾU CÂU HỎI. Vui lòng kiểm tra Google Sheet!</span>';
+        } else {
+            // Xóa thông báo nếu mọi thứ đều ổn
+            statusMessage.textContent = ''; 
+        }
+
+        // 5. Khởi tạo dữ liệu bài thi
         currentQuiz = data.questions;
-        correctAnswers = {}; // Lưu trữ đáp án đúng
+        correctAnswers = {}; 
 
         // TẠO CẤU TRÚC ĐÁP ÁN ĐÚNG TỪ DỮ LIỆU ĐÃ MÃ HÓA
         currentQuiz.forEach(q => {
-            // q.Correct_Answer là đáp án đúng (A, B, C, D) được server gửi về
             correctAnswers[q.ID] = q.Correct_Answer; 
-            delete q.Correct_Answer; // Loại bỏ đáp án đúng khỏi đối tượng câu hỏi
+            delete q.Correct_Answer; 
         });
 
+        // 6. Chuyển đổi giao diện sang chế độ làm bài
         document.getElementById('info-form').style.display = 'none';
         document.getElementById('quiz-header').style.display = 'block';
         document.getElementById('quiz-container').style.display = 'block';
-        statusMessage.textContent = '';
         
+        // 7. Bắt đầu hiển thị câu hỏi và đồng hồ
         renderQuiz();
         startTimer();
 
     } catch (error) {
+        // Xử lý lỗi kết nối hoặc lỗi từ server
         statusMessage.textContent = `Lỗi tải đề thi: ${error.message}`;
         console.error("Error loading quiz:", error);
     }
 }
+
 
 // Vẽ giao diện câu hỏi
 function renderQuiz() {
