@@ -93,13 +93,17 @@ function loadClassList() {
     lopSelect.disabled = true;
 
     if (!khoi || studentDataCache.length === 0) {
-        lopSelect.innerHTML = '<option value="">Chọn Khối trước</option>';
+        // Chỉ hiện thông báo "Chọn Khối trước" nếu chưa có Khối được chọn
+        if (!khoi) {
+            lopSelect.innerHTML = '<option value="">Chọn Khối trước</option>';
+        }
         return;
     }
     
     try {
-        // Lọc dữ liệu theo Khối và trích xuất các lớp duy nhất
-        const filteredStudents = studentDataCache.filter(row => row.Khoi === khoi);
+        // 🔥 PHƯƠNG PHÁP LỌC AN TOÀN NHẤT: Chuyển cả hai về chuỗi trước khi so sánh
+        const filteredStudents = studentDataCache.filter(row => String(row.Khoi) === String(khoi));
+        
         const uniqueClasses = [...new Set(filteredStudents.map(row => row.Lop))];
 
         if (uniqueClasses.length > 0) {
@@ -112,7 +116,8 @@ function loadClassList() {
             });
             lopSelect.disabled = false;
         } else {
-            lopSelect.innerHTML = '<option value="">Không có lớp nào trong dữ liệu</option>';
+            // Nếu Khối 7 được chọn nhưng không có học sinh, báo lỗi chi tiết hơn
+            lopSelect.innerHTML = '<option value="">Lỗi: Không tìm thấy lớp cho Khối ' + khoi + '</option>';
         }
         
     } catch (error) {
