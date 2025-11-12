@@ -1,4 +1,4 @@
-// URL Web App đã cung cấp
+// URL Web App đã cung cấp (Cần thay thế bằng URL Web App mới nhất và đang hoạt động của bạn)
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
 // --- CÁC BIẾN TOÀN CỤC ---
@@ -56,8 +56,8 @@ async function loadStudentData() {
             throw new Error(`Failed to load students.json: ${response.statusText}`);
         }
         
-        // Cập nhật bộ đệm và chuẩn hóa tên trường (Lop/LƠP, HoTen/TEN)
         const rawData = await response.json();
+        // Cập nhật bộ đệm và chuẩn hóa tên trường (Lop/LƠP, HoTen/TEN, Khối/Khoi)
         studentDataCache = rawData.map(student => ({
             Khoi: String(student.Khối || student.Khoi),
             Lop: String(student.LƠP || student.Lop), 
@@ -70,7 +70,10 @@ async function loadStudentData() {
         
         // Sau khi tải dữ liệu, thiết lập các sự kiện và tải danh sách bài kiểm tra
         setupEventListeners();
-        loadTestList(); 
+        
+        // 🔥 QUAN TRỌNG: Tự động tải danh sách lớp dựa trên Khối mặc định (đã được chọn Khối 7 trong HTML)
+        loadClassList(); 
+        loadTestList();
         
     } catch (error) {
         document.getElementById('status-message').textContent = 'Lỗi tải dữ liệu học sinh (JSON). Vui lòng kiểm tra file students.json.';
@@ -354,6 +357,7 @@ async function submitQuiz(isTimeout = false) {
     
     // 3. GHI KẾT QUẢ LÊN GOOGLE SHEET QUA GAS (POST)
     try {
+        // Lưu ý: Action submitQuiz được xử lý trong file Code.gs của bạn
         const result = await callApi({ action: 'submitQuiz' }, 'POST', submissionData);
         
         let finalMessage = `
