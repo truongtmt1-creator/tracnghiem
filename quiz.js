@@ -4,7 +4,7 @@
 
 // --- 1. CẤU HÌNH VÀ BIẾN TOÀN CỤC ---
 
-// 🔥 URL CỦA GOOGLE APPS SCRIPT WEB APP
+// 🔥 URL WEB APP ĐÃ ĐƯỢC CHÈN (SỬ DỤNG URL BẠN CUNG CẤP)
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
 // ID Bài kiểm tra mặc định
@@ -66,6 +66,7 @@ async function callApi(data, method = 'GET') {
         try {
             return JSON.parse(text);
         } catch (e) {
+            // Hiển thị lỗi rõ ràng nếu JSON không hợp lệ
             throw new Error(`Failed to parse response: ${text}. Check Apps Script Logs for details.`);
         }
     }
@@ -342,7 +343,7 @@ async function submitQuiz(isTimeout = false) {
         submitContainer.innerHTML = `
             <div style="text-align: center; padding: 30px;">
                 <h3 style="color: red;">❌ LỖI NỘP BÀI</h3>
-                <p>Không thể lưu kết quả. Vui lòng kiểm tra lại <strong>GAS_WEB_APP_URL</strong> và Deploy.</p>
+                <p>Không thể lưu kết quả. Vui lòng kiểm tra lại kết nối và Apps Script Logs.</p>
                 <p style="font-size: 0.9em;">Chi tiết lỗi: ${error.message}</p>
                 <button onclick="window.location.reload()" style="width: auto; padding: 10px 20px; background-color: #007bff;">
                     Thử lại
