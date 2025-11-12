@@ -5,10 +5,9 @@
 // --- 1. CẤU HÌNH VÀ BIẾN TOÀN CỤC ---
 
 // 🔥 URL CỦA GOOGLE APPS SCRIPT WEB APP
-// BẮT BUỘC phải là URL mới nhất sau khi bạn Deploy New Version
 const GAS_WEB_APP_URL = 'Yhttps://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
-// ID Bài kiểm tra mặc định (đã thống nhất)
+// ID Bài kiểm tra mặc định 
 const DEFAULT_BAIKT_ID = 'KT7GK1'; 
 
 let studentsData = []; // Dữ liệu danh sách học sinh
