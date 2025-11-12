@@ -5,7 +5,7 @@
 // --- 1. CẤU HÌNH VÀ BIẾN TOÀN CỤC ---
 
 // 🔥 URL CỦA GOOGLE APPS SCRIPT WEB APP
-const GAS_WEB_APP_URL = 'Yhttps://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
+const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
 // ID Bài kiểm tra mặc định
 const DEFAULT_BAIKT_ID = 'KT7GK1'; 
