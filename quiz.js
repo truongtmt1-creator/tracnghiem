@@ -228,7 +228,7 @@ function renderQuiz() {
 
         // 1. Tiêu đề câu hỏi (Mã hóa trước khi thêm vào DOM)
         const qTitle = document.createElement('h4');
-        qTitle.textContent = `Câu ${index + 1}. ${rot13(q.Tieu_de)}`; 
+        qTitle.textContent = `Câu ${index + 1}. ${q.Tieu_de}`; 
         questionDiv.appendChild(qTitle);
         
         // 2. Xử lý các lựa chọn
@@ -249,7 +249,7 @@ function renderQuiz() {
             const optionLabel = document.createElement('label');
             const optionChar = String.fromCharCode(65 + opIndex); // A, B, C, D mới (giá trị nội bộ)
             
-            const encodedContent = rot13(opt.content); 
+            const encodedContent = opt.content; 
             
             // KHÔNG HIỂN THỊ KÝ TỰ A, B, C, D TRÊN GIAO DIỆN
             optionLabel.innerHTML = `
