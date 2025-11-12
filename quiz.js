@@ -7,20 +7,22 @@
 // 🔥 URL CỦA GOOGLE APPS SCRIPT WEB APP
 const GAS_WEB_APP_URL = 'Yhttps://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
-// ID Bài kiểm tra mặc định 
+// ID Bài kiểm tra mặc định
 const DEFAULT_BAIKT_ID = 'KT7GK1'; 
 
-let studentsData = []; // Dữ liệu danh sách học sinh
-let studentInfo = { Khoi: '7', Lop: '', STT: 0, HoTen: '' }; // Thông tin học sinh đang làm bài
-let currentQuiz = []; // Mảng chứa câu hỏi đã được tải từ server
-let correctAnswers = {}; // Lưu trữ đáp án đúng (từ server)
-let timerInterval; // Biến điều khiển đồng hồ
+let studentsData = []; 
+let studentInfo = { Khoi: '7', Lop: '', STT: 0, HoTen: '' }; 
+let currentQuiz = []; 
+let correctAnswers = {}; 
+let timerInterval; 
+
 
 // --- 2. HÀM TIỆN ÍCH BẢO MẬT VÀ CHUNG ---
 
-// 🔥 Hàm Mã hóa ROT13 (đơn giản, đủ để chống nhìn lướt source code)
+// 🔥 Hàm Mã hóa ROT13 (để chống nhìn lướt source code)
 function rot13(str) {
-  return str.replace(/[a-zA-Z]/g, function(c) {
+  // Đảm bảo chỉ mã hóa các ký tự chữ cái, bỏ qua ký tự đặc biệt, dấu câu, và số
+  return String(str).replace(/[a-zA-Z]/g, function(c) {
     return String.fromCharCode((c <= 'Z' ? 90 : 122) >= (c = c.charCodeAt(0) + 13) ? c : c - 26);
   });
 }
@@ -44,7 +46,8 @@ async function callApi(data, method = 'GET') {
         
         const response = await fetch(url.toString());
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            // Ném lỗi chi tiết hơn nếu có thể
+            throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return await response.json();
         
@@ -58,12 +61,12 @@ async function callApi(data, method = 'GET') {
             body: JSON.stringify(data),
         });
 
-        // Apps Script trả về JSON dưới dạng text/html, cần xử lý
+        // Apps Script trả về JSON dưới dạng text/html, cần xử lý để tránh lỗi parsing
         const text = await response.text();
         try {
             return JSON.parse(text);
         } catch (e) {
-            throw new Error(`Failed to parse response: ${text}`);
+            throw new Error(`Failed to parse response: ${text}. Check Apps Script Logs for details.`);
         }
     }
 }
@@ -74,12 +77,13 @@ async function callApi(data, method = 'GET') {
 // Tải dữ liệu học sinh từ students.json
 async function loadStudentData() {
     try {
-        const response = await fetch('./students.json');
-        if (!response.ok) throw new Error('Không thể tải file students.json');
+        // Giả định file students.json nằm cùng thư mục hoặc có thể truy cập
+        const response = await fetch('./students.json'); 
+        if (!response.ok) throw new Error('Không thể tải file students.json. Kiểm tra đường dẫn.');
         
         studentsData = await response.json();
         
-        // Lọc danh sách lớp từ dữ liệu (Chỉ lấy Khối 7)
+        // Lọc danh sách lớp từ dữ liệu
         const classes = [...new Set(studentsData.filter(s => s.Khối === '7').map(s => s.LƠP))].sort();
         const lopSelect = document.getElementById('lop');
         lopSelect.innerHTML = '<option value="">--- Chọn Lớp ---</option>';
@@ -97,6 +101,7 @@ async function loadStudentData() {
     } catch (error) {
         console.error("Lỗi tải dữ liệu học sinh:", error);
         document.getElementById('lop').innerHTML = '<option value="">Lỗi tải dữ liệu</option>';
+        document.getElementById('status-message').innerHTML = '<span style="color:red;">❌ Lỗi: Không thể tải danh sách học sinh.</span>';
     }
 }
 
@@ -160,11 +165,9 @@ async function startQuiz() {
         }
 
         // 4. XỬ LÝ VÀ HIỂN THỊ CẢNH BÁO TỪ SERVER
-        let hasWarning = false;
         if (data.warnings && data.warnings.length > 0) {
-            hasWarning = true;
-            const warningMessage = data.warnings.join('<br>');
             const totalQuestions = data.questions.length;
+            const warningMessage = data.warnings.join('<br>');
             
             // Hiển thị cảnh báo trực tiếp trên form và dừng lại
             statusMessage.innerHTML = `
@@ -199,7 +202,7 @@ async function startQuiz() {
         
         // 7. Bắt đầu hiển thị câu hỏi và đồng hồ
         renderQuiz();
-        // Giả sử bài thi là 15 phút (900 giây)
+        // Bắt đầu đồng hồ 900 giây (15 phút)
         startTimer(900); 
 
     } catch (error) {
@@ -214,7 +217,7 @@ function renderQuiz() {
     const container = document.getElementById('quiz-container');
     container.innerHTML = ''; 
 
-    // 🔥 XÁO TRỘN THỨ TỰ CÂU HỎI
+    // XÁO TRỘN THỨ TỰ CÂU HỎI
     currentQuiz = shuffleArray(currentQuiz); 
 
     currentQuiz.forEach((q, index) => {
@@ -243,11 +246,11 @@ function renderQuiz() {
 
         options.forEach((opt, opIndex) => {
             const optionLabel = document.createElement('label');
-            const optionChar = String.fromCharCode(65 + opIndex); // A, B, C, D mới (chỉ dùng làm value)
+            const optionChar = String.fromCharCode(65 + opIndex); // A, B, C, D mới (giá trị nội bộ)
             
             const encodedContent = rot13(opt.content); 
             
-            // 🔥 KHÔNG HIỂN THỊ KÝ TỰ A, B, C, D TRÊN GIAO DIỆN
+            // KHÔNG HIỂN THỊ KÝ TỰ A, B, C, D TRÊN GIAO DIỆN
             optionLabel.innerHTML = `
                 <input type="radio" 
                        name="question-${q.ID}" 
@@ -294,9 +297,9 @@ async function submitQuiz(isTimeout = false) {
         }
         
         studentAnswers[q.ID] = { 
-            answered: studentChoiceChar, // Đáp án học sinh chọn (vị trí A/B/C/D mới)
-            original_key: originalKey, // Khóa gốc của đáp án đó (Dap_an_A, Dap_an_B, ...)
-            correct: correctChoice, // Đáp án đúng gốc (A, B, C, D)
+            answered: studentChoiceChar, 
+            original_key: originalKey, 
+            correct: correctChoice, 
             is_correct: isCorrect,
             question_content: rot13(q.Tieu_de) // Nội dung câu hỏi đã giải mã
         };
@@ -321,7 +324,7 @@ async function submitQuiz(isTimeout = false) {
     submitContainer.innerHTML = '<h3>Đang nộp bài và lưu kết quả... Vui lòng chờ.</h3>';
 
     try {
-        const response = await callApi(resultData, 'POST'); // Dùng POST cho việc ghi dữ liệu
+        const response = await callApi(resultData, 'POST');
 
         // 4. HIỂN THỊ THÔNG BÁO THÀNH CÔNG VÀ KẾT THÚC BÀI THI (KHÔNG HIỂN THỊ ĐIỂM)
         document.getElementById('quiz-header').style.display = 'none';
@@ -339,7 +342,7 @@ async function submitQuiz(isTimeout = false) {
         submitContainer.innerHTML = `
             <div style="text-align: center; padding: 30px;">
                 <h3 style="color: red;">❌ LỖI NỘP BÀI</h3>
-                <p>Không thể lưu kết quả. Vui lòng chụp màn hình lỗi và báo cáo cho giáo viên.</p>
+                <p>Không thể lưu kết quả. Vui lòng kiểm tra lại <strong>GAS_WEB_APP_URL</strong> và Deploy.</p>
                 <p style="font-size: 0.9em;">Chi tiết lỗi: ${error.message}</p>
                 <button onclick="window.location.reload()" style="width: auto; padding: 10px 20px; background-color: #007bff;">
                     Thử lại
@@ -383,7 +386,7 @@ document.addEventListener('contextmenu', function(e) {
 
 // 🔥 Vô hiệu hóa phím F12/Inspect
 document.onkeydown = function(e) {
-    // F12 || Ctrl+Shift+I || Ctrl+Shift+J (Mac: Cmd+Option+I/J)
+    // F12 || Ctrl+Shift+I || Ctrl+Shift+J || Cmd+Option+I/J
     if(e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I") || (e.ctrlKey && e.shiftKey && e.key === "J") || (e.metaKey && e.altKey && e.key === "I")) {
         e.preventDefault();
         alert("Thao tác kiểm tra mã nguồn đã bị vô hiệu hóa.");
