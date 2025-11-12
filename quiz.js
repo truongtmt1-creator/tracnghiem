@@ -8,6 +8,7 @@ let correctAnswers = {}; // Lưu trữ đáp án đúng (từ server)
 let quizDuration = 15 * 60; // 15 phút (900 giây)
 let timerInterval;
 let studentInfo = {}; // Thông tin học sinh sau khi xác thực
+const DEFAULT_BAIKT_ID = 'KT7GK1'; // 🔥 ID BÀI KIỂM TRA MẶC ĐỊNH
 
 // --- HÀM TIỆN ÍCH: GỌI API GAS ---
 async function callApi(params, method = 'GET', payload = null) {
@@ -71,9 +72,8 @@ async function loadStudentData() {
         // Sau khi tải dữ liệu, thiết lập các sự kiện và tải danh sách bài kiểm tra
         setupEventListeners();
         
-        // 🔥 QUAN TRỌNG: Tự động tải danh sách lớp dựa trên Khối mặc định (đã được chọn Khối 7 trong HTML)
+        // 🔥 KHÔNG CẦN TẢI DANH SÁCH BÀI KIỂM TRA
         loadClassList(); 
-        loadTestList();
         
     } catch (error) {
         document.getElementById('status-message').textContent = 'Lỗi tải dữ liệu học sinh (JSON). Vui lòng kiểm tra file students.json.';
@@ -93,7 +93,6 @@ function loadClassList() {
     lopSelect.disabled = true;
 
     if (!khoi || studentDataCache.length === 0) {
-        // Chỉ hiện thông báo "Chọn Khối trước" nếu chưa có Khối được chọn
         if (!khoi) {
             lopSelect.innerHTML = '<option value="">Chọn Khối trước</option>';
         }
@@ -101,7 +100,7 @@ function loadClassList() {
     }
     
     try {
-        // 🔥 PHƯƠNG PHÁP LỌC AN TOÀN NHẤT: Chuyển cả hai về chuỗi trước khi so sánh
+        // Phương pháp lọc an toàn
         const filteredStudents = studentDataCache.filter(row => String(row.Khoi) === String(khoi));
         
         const uniqueClasses = [...new Set(filteredStudents.map(row => row.Lop))];
@@ -116,7 +115,6 @@ function loadClassList() {
             });
             lopSelect.disabled = false;
         } else {
-            // Nếu Khối 7 được chọn nhưng không có học sinh, báo lỗi chi tiết hơn
             lopSelect.innerHTML = '<option value="">Lỗi: Không tìm thấy lớp cho Khối ' + khoi + '</option>';
         }
         
@@ -165,55 +163,17 @@ function lookupName() {
     }
 }
 
-// --- LOGIC TẢI BÀI KIỂM TRA (SERVER-SIDE GAS) ---
-
-// Tải danh sách bài kiểm tra đang 'open' từ GAS
-async function loadTestList() {
-    const baiktSelect = document.getElementById('baikt_id');
-    baiktSelect.innerHTML = '<option value="">Đang tải...</option>';
-    
-    try {
-        const data = await callApi({ action: 'getTests' });
-        
-        const openTests = data.filter(test => test.TrangThai === 'open');
-
-        if (openTests.length === 0) {
-            baiktSelect.innerHTML = '<option value="">Không có bài kiểm tra nào đang mở</option>';
-        } else {
-            baiktSelect.innerHTML = '';
-            
-            openTests.forEach(test => {
-                const option = document.createElement('option');
-                option.value = test.BaiKT_ID;
-                option.textContent = test.TenBaiKT;
-                baiktSelect.appendChild(option);
-            });
-            
-            // Tự động chọn bài đầu tiên
-            baiktSelect.value = openTests[0].BaiKT_ID;
-        }
-
-    } catch (error) {
-        baiktSelect.innerHTML = '<option value="">Lỗi tải danh sách bài kiểm tra</option>';
-        document.getElementById('status-message').textContent = `Lỗi tải danh sách bài kiểm tra: ${error.message}`;
-        console.error("Error loading tests:", error);
-    }
-}
+// 🔥 Hàm loadTestList đã bị loại bỏ
 
 // --- LOGIC BẮT ĐẦU VÀ LÀM BÀI ---
 
 // Hàm bắt đầu bài kiểm tra
 async function startQuiz() {
-    const baiktId = document.getElementById('baikt_id').value;
     const statusMessage = document.getElementById('status-message');
+    const baiktId = DEFAULT_BAIKT_ID; // 🔥 SỬ DỤNG ID MẶC ĐỊNH
 
     if (!studentInfo.HoTen || studentInfo.HoTen.includes('Học sinh không hợp lệ')) {
         statusMessage.textContent = 'Vui lòng xác thực thông tin học sinh hợp lệ trước khi bắt đầu.';
-        return;
-    }
-    
-    if (!baiktId) {
-        statusMessage.textContent = 'Vui lòng chọn Bài Kiểm Tra.';
         return;
     }
     
@@ -227,7 +187,7 @@ async function startQuiz() {
         });
         
         if (data.questions.length === 0) {
-             throw new Error("Quiz configuration found, but no questions were selected. Check KhoiX and CauHinh sheets.");
+             throw new Error("Quiz configuration found, but no questions were selected. Check CauHinh sheet for ID: " + baiktId);
         }
         
         currentQuiz = data.questions;
@@ -353,7 +313,7 @@ async function submitQuiz(isTimeout = false) {
     // 2. CHUẨN BỊ DỮ LIỆU ĐỂ GHI
     const submissionData = {
         ...studentInfo,
-        BaiKT_ID: document.getElementById('baikt_id').value,
+        BaiKT_ID: DEFAULT_BAIKT_ID, // 🔥 Dùng ID MẶC ĐỊNH
         DiemSo: diemSo.toFixed(2), // Làm tròn 2 chữ số thập phân
         TongSoCauDung: totalCorrect,
         TongSoCau: totalQuestions,
@@ -362,14 +322,13 @@ async function submitQuiz(isTimeout = false) {
     
     // 3. GHI KẾT QUẢ LÊN GOOGLE SHEET QUA GAS (POST)
     try {
-        // Lưu ý: Action submitQuiz được xử lý trong file Code.gs của bạn
         const result = await callApi({ action: 'submitQuiz' }, 'POST', submissionData);
         
         let finalMessage = `
             <h3>🎉 NỘP BÀI THÀNH CÔNG!</h3>
             <hr>
             <p>Họ Tên: ${studentInfo.HoTen}</p>
-            <p>Bài Kiểm Tra: ${document.getElementById('baikt_id').options[document.getElementById('baikt_id').selectedIndex].textContent}</p>
+            <p>Bài Kiểm Tra: ${DEFAULT_BAIKT_ID} (Giữa Kì)</p>
             <p>Tổng số câu: ${totalQuestions}</p>
             <p style="font-size: 1.2em; color: green; font-weight: bold;">Số câu trả lời đúng: ${totalCorrect}</p>
             <p style="font-size: 1.5em; color: #007bff; font-weight: bold;">ĐIỂM SỐ: ${submissionData.DiemSo}</p>

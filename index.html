@@ -3,158 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trắc Nghiệm Trực Tuyến - Hà Huy Tập</title>
+    <title>Bài Kiểm Tra Giữa Kì - Khối 7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* CSS Responsive & Centering */
         body {
-            font-family: Arial, sans-serif;
-            padding: 0;
-            margin: 0;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f4f9;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
+            color: #333;
+            margin: 0;
+            padding: 20px;
         }
         .container {
             max-width: 800px;
-            width: 95%;
-            margin: 20px auto;
+            margin: auto;
             background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            box-sizing: border-box;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
-
-        /* Đồng Hồ Đếm Ngược */
-        #quiz-header {
+        h2 {
             text-align: center;
-            margin-bottom: 20px;
-            display: none;
-            padding: 10px;
-            background-color: #ffe6e6;
-            border-radius: 4px;
+            color: #007bff;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
         }
-
-        /* Form và Input */
-        #quiz-container { display: none; }
-        .form-group { margin-bottom: 15px; }
+        #info-form {
+            background-color: #e9f7ff;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #0056b3;
         }
-        input[type="text"], input[type="number"], select {
+        select, input[type="number"], input[type="text"] {
             width: 100%;
             padding: 12px;
-            border: 1px solid #ccc;
+            border: 1px solid #ced4da;
             border-radius: 6px;
             box-sizing: border-box;
             font-size: 16px;
+            transition: border-color 0.3s;
         }
-        #hoten {
-            background-color: #e9e9e9;
-            font-weight: bold;
+        select:focus, input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+        input[readonly] {
+            background-color: #f8f9fa;
         }
         button {
+            display: block;
             width: 100%;
             padding: 15px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             border: none;
             border-radius: 6px;
+            font-size: 18px;
+            font-weight: 700;
             cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.1s;
         }
-        button:hover { background-color: #0056b3; }
-        .alert { color: red; margin-top: 10px; }
-
-        /* Hiển thị Câu hỏi */
-        .question {
-            border: 1px solid #ddd;
-            padding: 15px;
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        #status-message {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        /* Quiz Styles */
+        #quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
             margin-bottom: 20px;
-            border-radius: 6px;
-            background-color: #fff;
         }
-        .options input[type="radio"] {
-            width: auto;
-            margin-right: 8px;
+        #timer {
+            font-size: 1.8em;
+            color: #dc3545;
+            font-weight: 700;
+            border: 2px solid #dc3545;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .question h4 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
         .options label {
-            display: block; /* Đảm bảo mỗi lựa chọn là một dòng riêng */
-            font-weight: normal;
-            margin-bottom: 10px;
+            display: block;
+            background: #fff;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.2s;
+            font-weight: 400;
+            color: #333;
         }
-
-        @media (max-width: 600px) {
-            .container {
-                width: 98%;
-                margin: 10px auto;
-                padding: 15px;
-            }
+        .options label:hover {
+            background-color: #e6f7ff;
+        }
+        .options input[type="radio"] {
+            margin-right: 10px;
+            width: auto;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2 style="text-align: center;">🛡️ Xác Nhận Thông Tin & Bắt Đầu Bài Kiểm Tra</h2>
-        <hr>
+        <h2>BÀI KIỂM TRA GIỮA KÌ MÔN HỌC - KHỐI 7</h2>
 
         <div id="info-form">
-            <div class="form-group">
-                <label for="khoi">Khối:</label>
-                <select id="khoi">
-                    <option value="">Chọn Khối</option>
-                    <option value="6">6</option>
-                    <option value="7" selected>7</option> 
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    </select>
-            </div>
+            <h3>Xác thực thông tin học sinh</h3>
 
             <div class="form-group">
-                <label for="lop">Lớp:</label>
-                <select id="lop">
-                    <option value="">Chọn Lớp</option>
+                <label for="khoi">1. Chọn Khối:</label>
+                <select id="khoi" disabled> 
+                    <option value="7" selected>7</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="stt">Số Thứ Tự:</label>
-                <input type="number" id="stt" min="1" required>
-            </div>
-
-            <div class="form-group">
-                <label for="hoten">Họ Tên:</label>
-                <input type="text" id="hoten" readonly placeholder="Tên sẽ tự động điền từ CSDL">
-            </div>
-
-            <div class="form-group" id="baikt-select-group">
-                <label for="baikt_id">Bài Kiểm Tra Hiện Có:</label>
-                <select id="baikt_id">
-                    <option value="">Vui lòng chọn Khối...</option>
+                <label for="lop">2. Chọn Lớp:</label>
+                <select id="lop">
+                    <option value="">Đang tải danh sách lớp...</option>
                 </select>
             </div>
 
-            <p class="alert" id="status-message"></p>
+            <div class="form-group">
+                <label for="stt">3. Nhập STT:</label>
+                <input type="number" id="stt" min="1" max="50" placeholder="Số thứ tự trong danh sách lớp">
+            </div>
+
+            <div class="form-group">
+                <label for="hoten">4. Họ Tên Học Sinh:</label>
+                <input type="text" id="hoten" readonly placeholder="Tên sẽ tự động điền sau khi nhập STT">
+            </div>
 
             <button onclick="startQuiz()">BẮT ĐẦU LÀM BÀI</button>
+            
+            <p id="status-message"></p>
         </div>
 
-        <div id="quiz-header" style="text-align: center; margin-bottom: 20px; display: none;">
-            <h3>⏱️ Thời Gian Còn Lại: <span id="timer" style="color: red; font-size: 1.5em;">15:00</span></h3>
+        <div id="quiz-header" style="display: none;">
+            <span>Bài: KT Giữa Kì Khối 7</span>
+            <span id="timer">15:00</span>
         </div>
-
-        <div id="quiz-container">
+        
+        <div id="quiz-container" style="display: none;">
             </div>
+
     </div>
 
-    <script src="quiz.js"></script>
+    <script src="./quiz.js"></script>
+
 </body>
 </html>
