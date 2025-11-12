@@ -1,5 +1,5 @@
 // ======================================================================
-// quiz.js - LOGIC XỬ LÝ BÀI KIỂM TRA (ĐÃ SỬA LỖI TÊN CỘT "undefined")
+// quiz.js - LOGIC XỬ LÝ BÀI KIỂM TRA (ĐÃ SỬA LỖI TÊN CỘT "undefined" VÀ "MucDo")
 // ======================================================================
 
 // --- 1. CẤU HÌNH VÀ BIẾN TOÀN CỤC ---
@@ -229,7 +229,9 @@ function renderQuiz() {
         // 1. Tiêu đề câu hỏi 
         const qTitle = document.createElement('h4');
         
-        // 🔥 ĐÃ SỬA: Dùng q.Cau_hoi thay vì q.Tieu_de để khớp với Sheet của bạn
+        // 🔥 SỬA: Dùng q.Cau_hoi (Tên cột đã xác nhận)
+        // 🔥 VÀ SỬA: Loại bỏ q.MucDo ở đây để không bị lỗi undefined ở tiêu đề
+        // Nếu muốn hiển thị, bạn cần đảm bảo cột MucDo có dữ liệu
         qTitle.textContent = `Câu ${index + 1}. ${q.Cau_hoi}`; 
         
         questionDiv.appendChild(qTitle);
@@ -254,7 +256,7 @@ function renderQuiz() {
             
             const contentToDisplay = opt.content; 
             
-            // Hiển thị nội dung chưa mã hóa (đã sửa lỗi Rot13 trước đó)
+            // Hiển thị nội dung chưa mã hóa
             optionLabel.innerHTML = `
                 <input type="radio" 
                        name="question-${q.ID}" 
