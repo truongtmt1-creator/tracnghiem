@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Tool - Tải Đề Thi</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h2 { color: #007bff; }
+        .status { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-weight: bold; }
+        #output { white-space: pre-wrap; background-color: #eee; padding: 15px; border-radius: 4px; max-height: 600px; overflow-y: auto; }
+        .question-item { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; border-left: 5px solid #007bff; }
+        .answer { color: green; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>🛠️ Debug Tool: Tải Đề Thi Trực Tiếp</h2>
+        <p>Kiểm tra kết nối và dữ liệu câu hỏi từ Google Sheet (ID: `1dACqTTznqndOqWl-QOyvLNqFtEyRLXuowj6U2QWFfMQ`, Sheet: `Khoi7`).</p>
+        <div id="status-message" class="status">Đang kết nối...</div>
+        
+        <button onclick="fetchQuestions()">BẮT ĐẦU TẢI & HIỂN THỊ CÂU HỎI</button>
+
+        <h3 style="margin-top: 30px;">Kết quả (Dữ liệu thô):</h3>
+        <pre id="output"></pre>
+
+        <h3 style="margin-top: 30px;">Hiển thị Câu hỏi (Nếu thành công):</h3>
+        <div id="quiz-display"></div>
+    </div>
+
+    <script>
+        // Cần thay thế bằng URL Web App mới nhất và đang hoạt động của bạn
+        const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec';
+        
+        // CÁC THAM SỐ CỐ ĐỊNH ĐỂ KIỂM LỖI
+        const DEBUG_KHOI = '7';
+        const DEBUG_BAIKT_ID = 'KT7GK1'; // ID bài kiểm tra giả định/có thật
+
+        const statusDisplay = document.getElementById('status-message');
+        const outputDisplay = document.getElementById('output');
+        const quizDisplay = document.getElementById('quiz-display');
+
+
+        async function fetchQuestions() {
+            statusDisplay.textContent = 'Đang gửi yêu cầu đến Google Apps Script...';
+            outputDisplay.textContent = 'Chờ phản hồi...';
+            quizDisplay.innerHTML = '';
+
+            try {
+                // 1. Xây dựng URL với các tham số cố định
+                const url = new URL(GAS_WEB_APP_URL);
+                url.searchParams.append('action', 'getQuiz');
+                url.searchParams.append('Khoi', DEBUG_KHOI);
+                url.searchParams.append('BaiKT_ID', DEBUG_BAIKT_ID);
+
+                // 2. Gửi yêu cầu
+                const response = await fetch(url.toString(), {
+                    method: 'GET',
+                    mode: 'cors'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Lỗi HTTP! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                outputDisplay.textContent = JSON.stringify(data, null, 2);
+
+                if (data.error) {
+                    statusDisplay.style.backgroundColor = '#ffcccc';
+                    statusDisplay.textContent = `🚨 Lỗi từ Apps Script: ${data.error}`;
+                    return;
+                }
+
+                if (data.questions && data.questions.length > 0) {
+                    statusDisplay.style.backgroundColor = '#ccffcc';
+                    statusDisplay.textContent = `✅ Tải thành công! Tìm thấy ${data.questions.length} câu hỏi.`;
+                    renderQuizData(data.questions);
+                } else {
+                    statusDisplay.style.backgroundColor = '#fff7cc';
+                    statusDisplay.textContent = '⚠️ Tải thành công, nhưng không có câu hỏi nào được chọn (Kiểm tra sheet Cấu hình và Khoi7).';
+                }
+
+            } catch (error) {
+                statusDisplay.style.backgroundColor = '#ffcccc';
+                statusDisplay.textContent = `❌ Lỗi kết nối/phân tích: ${error.message}`;
+                outputDisplay.textContent = `Kiểm tra lại GAS_WEB_APP_URL và triển khai Web App. Chi tiết lỗi: ${error.message}`;
+                console.error("Debug Error:", error);
+            }
+        }
+
+        function renderQuizData(questions) {
+            quizDisplay.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'question-item';
+
+                let optionsHtml = '';
+                const optionKeys = ['Dap_an_A', 'Dap_an_B', 'Dap_an_C', 'Dap_an_D'];
+
+                optionKeys.forEach((key, opIndex) => {
+                    if (q[key]) { 
+                        const optionChar = String.fromCharCode(65 + opIndex);
+                        optionsHtml += `<p>${optionChar}. ${q[key]}</p>`;
+                    }
+                });
+                
+                // Hiển thị đáp án đúng (đã được mã hóa là Correct_Answer)
+                const correctAnswer = q.Correct_Answer || 'N/A';
+                
+                qDiv.innerHTML = `
+                    <h4>Câu ${index + 1}. (ID: ${q.ID}) - ${q.Tieu_de}</h4>
+                    ${optionsHtml}
+                    <p class="answer">Đáp án đúng (Debug): ${correctAnswer}</p>
+                `;
+                quizDisplay.appendChild(qDiv);
+            });
+        }
+    </script>
+</body>
+</html>
