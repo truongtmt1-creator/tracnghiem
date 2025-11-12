@@ -1,129 +1,107 @@
 // URL Web App đã cung cấp
 const GAS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx9Kc3Zv77wTfBSQcAGbtaZykSDIIMi1bW3CDRHHs6xJu_AWlRPw1UBaaR2G5ROY3F9/exec'; 
 
-// Biến lưu trữ dữ liệu chính
-let quizData = []; // Lưu trữ câu hỏi và đáp án đúng (đã được ẩn danh)
-let studentInfo = {}; // Lưu trữ thông tin học sinh sau khi xác thực
-let studentAnswers = {}; // Lưu trữ câu trả lời của học sinh
-let selectedBaiKT_ID = ''; // Lưu ID bài kiểm tra được chọn/tự động gán
+// --- CÁC BIẾN TOÀN CỤC ---
+let studentDataCache = []; // Bộ đệm dữ liệu học sinh từ students.json
+let currentQuiz = [];
+let correctAnswers = {}; // Lưu trữ đáp án đúng (từ server)
+let quizDuration = 15 * 60; // 15 phút (900 giây)
+let timerInterval;
+let studentInfo = {}; // Thông tin học sinh sau khi xác thực
 
-// Biến cho chức năng đếm ngược
-let timeLeft = 0;
-let timerInterval = null; 
-const QUIZ_DURATION_MINUTES = 15; // Mặc định: 15 phút làm bài
-
-// --- KHỞI TẠO VÀ BẢO MẬT ---
-
-// 1. CHẶN PHÍM PHẢI CHUỘT
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    alert("Tính năng chuột phải đã bị vô hiệu hóa để bảo mật bài kiểm tra.");
-});
-
-// 2. TẢI DỮ LIỆU KHI TẢI TRANG HOẶC CÓ THAY ĐỔI TRÊN FORM
-document.addEventListener('DOMContentLoaded', loadTestList);
-
-// Bắt sự kiện thay đổi Khối để tải lại Lớp và Bài kiểm tra
-document.getElementById('khoi').addEventListener('change', () => {
-    loadTestList();      // Tải danh sách Bài KT
-    loadClassList();     // Tải danh sách Lớp MỚI
-    lookupName();        // Thử tra cứu tên (nếu STT đã điền)
-});
-
-// Bắt sự kiện thay đổi Lớp và STT để tra cứu tên
-document.getElementById('lop').addEventListener('change', lookupName); // Dùng 'change' cho select
-document.getElementById('stt').addEventListener('input', lookupName);
-
-// --- HÀM GỌI API ---
-
+// --- HÀM TIỆN ÍCH: GỌI API GAS ---
 async function callApi(params, method = 'GET', payload = null) {
     const url = new URL(GAS_WEB_APP_URL);
-    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
     
-    const options = { method: method };
-    if (payload && method === 'POST') {
-        options.headers = { 'Content-Type': 'application/json' };
+    // Thêm các tham số vào URL
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+
+    const options = {
+        method: method,
+        mode: 'cors', // Bắt buộc cho giao tiếp cross-origin
+    };
+
+    if (method === 'POST' && payload) {
+        options.headers = {
+            'Content-Type': 'application/json',
+        };
         options.body = JSON.stringify(payload);
     }
+    
+    const response = await fetch(url.toString(), options);
 
-    const response = await fetch(url, options);
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
-    return response.json();
-}
-
-// --- LOGIC XÁC THỰC VÀ TẢI DỮ LIỆU FORM ---
-
-async function loadTestList() {
-    const khoi = document.getElementById('khoi').value;
-    const testSelectGroup = document.getElementById('baikt-select-group');
-    const testSelect = document.getElementById('baikt_id');
-    selectedBaiKT_ID = ''; 
-
-    testSelect.innerHTML = '<option value="">Đang tải...</option>'; 
-    testSelectGroup.style.display = 'block';
-
-    if (!khoi) {
-        testSelect.innerHTML = '<option value="">Vui lòng chọn Khối</option>';
-        return;
+    
+    // Chuyển đổi phản hồi thành JSON
+    const data = await response.json();
+    
+    // Kiểm tra lỗi từ server (nếu GAS trả về lỗi trong JSON)
+    if (data.error) {
+        throw new Error(data.error);
     }
 
+    return data;
+}
+
+// --- LOGIC TẢI DỮ LIỆU HỌC SINH (CLIENT-SIDE) ---
+
+// Tải dữ liệu học sinh từ students.json
+async function loadStudentData() {
+    document.getElementById('status-message').textContent = 'Đang tải dữ liệu học sinh...';
     try {
-        const tests = await callApi({ action: 'getTests' });
-        
-        const filteredTests = tests.filter(t => t.TrangThai.toLowerCase() === 'open' && String(t.Khoi) === khoi);
-        
-        if (filteredTests.length === 0) {
-            testSelect.innerHTML = '<option value="">Không có bài kiểm tra đang mở cho khối này</option>';
-            testSelectGroup.style.display = 'none';
-        } else if (filteredTests.length === 1) {
-            // TỰ ĐỘNG CHỌN BÀI KHI CHỈ CÓ 1
-            const test = filteredTests[0];
-            selectedBaiKT_ID = test.BaiKT_ID;
-            testSelect.innerHTML = `<option value="${test.BaiKT_ID}">${test.TenBaiKT} (Tự động chọn)</option>`;
-            testSelect.disabled = true; 
-            document.getElementById('status-message').textContent = `Đã chọn bài: ${test.TenBaiKT}.`;
-            testSelectGroup.style.display = 'block';
-        } else {
-            // CÓ NHIỀU BÀI: Yêu cầu học sinh chọn
-            testSelect.innerHTML = '<option value="">Chọn Bài Kiểm Tra</option>';
-            testSelect.disabled = false;
-            filteredTests.forEach(test => {
-                const option = document.createElement('option');
-                option.value = test.BaiKT_ID;
-                option.textContent = `${test.TenBaiKT} (${test.BaiKT_ID})`;
-                testSelect.appendChild(option);
-            });
-            testSelectGroup.style.display = 'block';
+        const response = await fetch('./students.json');
+        if (!response.ok) {
+            throw new Error(`Failed to load students.json: ${response.statusText}`);
         }
+        
+        // Cập nhật bộ đệm và chuẩn hóa tên trường (Lop/LƠP, HoTen/TEN)
+        const rawData = await response.json();
+        studentDataCache = rawData.map(student => ({
+            Khoi: String(student.Khối || student.Khoi),
+            Lop: String(student.LƠP || student.Lop), 
+            STT: String(student.STT),
+            HoTen: String(student.TEN || student.HoTen),
+            IDHS: student.IDHS || null 
+        }));
+
+        document.getElementById('status-message').textContent = 'Vui lòng chọn thông tin để bắt đầu.';
+        
+        // Sau khi tải dữ liệu, thiết lập các sự kiện và tải danh sách bài kiểm tra
+        setupEventListeners();
+        loadTestList(); 
+        
     } catch (error) {
-        document.getElementById('status-message').textContent = 'Lỗi khi tải danh sách bài kiểm tra.';
-        console.error("Error loading tests:", error);
+        document.getElementById('status-message').textContent = 'Lỗi tải dữ liệu học sinh (JSON). Vui lòng kiểm tra file students.json.';
+        console.error("Error loading student data:", error);
     }
 }
 
-async function loadClassList() {
+// --- LOGIC TRA CỨU HỌC SINH (CLIENT-SIDE) ---
+
+// 1. Tải danh sách Lớp dựa trên Khối (Client-side)
+function loadClassList() {
     const khoi = document.getElementById('khoi').value;
     const lopSelect = document.getElementById('lop');
     
     // Reset select box
-    lopSelect.innerHTML = '<option value="">Đang tải...</option>';
+    lopSelect.innerHTML = '<option value="">Chọn Lớp</option>';
     lopSelect.disabled = true;
 
-    if (!khoi) {
+    if (!khoi || studentDataCache.length === 0) {
         lopSelect.innerHTML = '<option value="">Chọn Khối trước</option>';
         return;
     }
     
     try {
-        const result = await callApi({ action: 'getClassesByBlock', Khoi: khoi });
-        const classes = result.classes;
+        // Lọc dữ liệu theo Khối và trích xuất các lớp duy nhất
+        const filteredStudents = studentDataCache.filter(row => row.Khoi === khoi);
+        const uniqueClasses = [...new Set(filteredStudents.map(row => row.Lop))];
 
-        lopSelect.innerHTML = '<option value="">Chọn Lớp</option>'; // Lựa chọn mặc định
-        
-        if (classes.length > 0) {
-            classes.forEach(lop => {
+        if (uniqueClasses.length > 0) {
+            uniqueClasses.sort(); // Sắp xếp theo tên lớp
+            uniqueClasses.forEach(lop => {
                 const option = document.createElement('option');
                 option.value = lop;
                 option.textContent = lop;
@@ -131,235 +109,289 @@ async function loadClassList() {
             });
             lopSelect.disabled = false;
         } else {
-            lopSelect.innerHTML = '<option value="">Không có lớp nào trong CSDL</option>';
+            lopSelect.innerHTML = '<option value="">Không có lớp nào trong dữ liệu</option>';
         }
+        
     } catch (error) {
-        lopSelect.innerHTML = '<option value="">Lỗi tải danh sách lớp</option>';
-        console.error("Error loading class list:", error);
+        lopSelect.innerHTML = '<option value="">Lỗi xử lý danh sách lớp</option>';
+        console.error("Error processing class list:", error);
     }
     
-    // Sau khi tải lớp, thử tra cứu tên (nếu STT đã được điền)
     lookupName();
 }
 
-async function lookupName() {
+// 2. Tra cứu tên học sinh theo Khối, Lớp, STT (Client-side)
+function lookupName() {
     const khoi = document.getElementById('khoi').value;
-    const lop = document.getElementById('lop').value; // Lấy từ select
+    const lop = document.getElementById('lop').value; 
     const stt = document.getElementById('stt').value;
     const hotenInput = document.getElementById('hoten');
     hotenInput.value = '';
     document.getElementById('status-message').textContent = '';
+    studentInfo = {}; // Reset thông tin học sinh
     
-    if (khoi && lop && stt) {
-        try {
-            const data = await callApi({ action: 'lookupStudent', Khoi: khoi, Lop: lop, STT: stt });
+    if (khoi && lop && stt && studentDataCache.length > 0) {
+        // Tìm kiếm trong bộ nhớ đệm
+        const foundStudent = studentDataCache.find(row => 
+            String(row.Khoi) === khoi && row.Lop === lop && String(row.STT) === stt
+        );
 
-            if (data.HoTen && data.HoTen !== 'Không tìm thấy học sinh') {
-                hotenInput.value = data.HoTen;
-                document.getElementById('status-message').textContent = `Chào mừng ${data.HoTen}!`;
-                studentInfo = { Khoi: data.Khoi, Lop: data.Lop, STT: data.STT, HoTen: data.HoTen, IDHS: data.IDHS };
-            } else {
-                hotenInput.value = 'Học sinh không hợp lệ';
-                document.getElementById('status-message').textContent = 'Khối, Lớp, hoặc STT không đúng.';
-                studentInfo = {};
-            }
-        } catch (error) {
-            document.getElementById('status-message').textContent = 'Lỗi kết nối tra cứu tên.';
-            console.error("Error looking up name:", error);
-            studentInfo = {};
+        if (foundStudent) {
+            hotenInput.value = foundStudent.HoTen;
+            document.getElementById('status-message').textContent = `Chào mừng ${foundStudent.HoTen}!`;
+            
+            // Lưu thông tin học sinh để gửi lên server sau
+            studentInfo = { 
+                Khoi: foundStudent.Khoi, 
+                Lop: foundStudent.Lop, 
+                STT: foundStudent.STT, 
+                HoTen: foundStudent.HoTen, 
+                IDHS: foundStudent.IDHS || 'N/A' 
+            };
+        } else {
+            hotenInput.value = 'Học sinh không hợp lệ';
+            document.getElementById('status-message').textContent = 'Khối, Lớp, hoặc STT không đúng.';
         }
+    } else if (khoi && lop && stt) {
+        hotenInput.value = 'Đang chờ dữ liệu tải...';
     }
 }
 
-// --- LOGIC TẢI ĐỀ THI VÀ HIỂN THỊ ---
+// --- LOGIC TẢI BÀI KIỂM TRA (SERVER-SIDE GAS) ---
 
+// Tải danh sách bài kiểm tra đang 'open' từ GAS
+async function loadTestList() {
+    const baiktSelect = document.getElementById('baikt_id');
+    baiktSelect.innerHTML = '<option value="">Đang tải...</option>';
+    
+    try {
+        const data = await callApi({ action: 'getTests' });
+        
+        const openTests = data.filter(test => test.TrangThai === 'open');
+
+        if (openTests.length === 0) {
+            baiktSelect.innerHTML = '<option value="">Không có bài kiểm tra nào đang mở</option>';
+        } else {
+            baiktSelect.innerHTML = '';
+            
+            openTests.forEach(test => {
+                const option = document.createElement('option');
+                option.value = test.BaiKT_ID;
+                option.textContent = test.TenBaiKT;
+                baiktSelect.appendChild(option);
+            });
+            
+            // Tự động chọn bài đầu tiên
+            baiktSelect.value = openTests[0].BaiKT_ID;
+        }
+
+    } catch (error) {
+        baiktSelect.innerHTML = '<option value="">Lỗi tải danh sách bài kiểm tra</option>';
+        document.getElementById('status-message').textContent = `Lỗi tải danh sách bài kiểm tra: ${error.message}`;
+        console.error("Error loading tests:", error);
+    }
+}
+
+// --- LOGIC BẮT ĐẦU VÀ LÀM BÀI ---
+
+// Hàm bắt đầu bài kiểm tra
 async function startQuiz() {
-    let baikt_id = selectedBaiKT_ID || document.getElementById('baikt_id').value;
+    const baiktId = document.getElementById('baikt_id').value;
+    const statusMessage = document.getElementById('status-message');
 
-    if (!studentInfo.HoTen || !baikt_id) {
-        document.getElementById('status-message').textContent = 'Vui lòng điền đầy đủ thông tin và chọn bài kiểm tra hợp lệ.';
+    if (!studentInfo.HoTen || studentInfo.HoTen.includes('Học sinh không hợp lệ')) {
+        statusMessage.textContent = 'Vui lòng xác thực thông tin học sinh hợp lệ trước khi bắt đầu.';
         return;
     }
-
-    document.getElementById('status-message').textContent = 'Đang tải đề thi... Vui lòng chờ.';
     
+    if (!baiktId) {
+        statusMessage.textContent = 'Vui lòng chọn Bài Kiểm Tra.';
+        return;
+    }
+    
+    statusMessage.textContent = 'Đang tạo đề thi ngẫu nhiên...';
+
     try {
-        const params = {
+        const data = await callApi({ 
             action: 'getQuiz',
             Khoi: studentInfo.Khoi,
-            BaiKT_ID: baikt_id 
-        };
-        const result = await callApi(params);
+            BaiKT_ID: baiktId
+        });
         
-        if (result.error) {
-             document.getElementById('status-message').textContent = 'Lỗi tải đề thi: ' + result.error;
-             return;
+        if (data.questions.length === 0) {
+             throw new Error("Quiz configuration found, but no questions were selected. Check KhoiX and CauHinh sheets.");
         }
-
-        quizData = result.questions; 
         
-        if (quizData.length === 0) {
-            document.getElementById('status-message').textContent = 'Không tìm thấy câu hỏi nào theo cấu hình.';
-            return;
-        }
+        currentQuiz = data.questions;
+        correctAnswers = {}; // Lưu trữ đáp án đúng
 
-        // Ẩn form xác thực, hiển thị khu vực làm bài và đồng hồ
+        // TẠO CẤU TRÚC ĐÁP ÁN ĐÚNG TỪ DỮ LIỆU ĐÃ MÃ HÓA
+        currentQuiz.forEach(q => {
+            // q.Correct_Answer là đáp án đúng (A, B, C, D) được server gửi về
+            correctAnswers[q.ID] = q.Correct_Answer; 
+            delete q.Correct_Answer; // Loại bỏ đáp án đúng khỏi đối tượng câu hỏi
+        });
+
         document.getElementById('info-form').style.display = 'none';
-        document.getElementById('status-message').textContent = `Bắt đầu làm bài: ${baikt_id} (${quizData.length} câu)`;
-        document.getElementById('quiz-container').style.display = 'block';
         document.getElementById('quiz-header').style.display = 'block';
-
+        document.getElementById('quiz-container').style.display = 'block';
+        statusMessage.textContent = '';
+        
         renderQuiz();
-        startTimer(); // Bắt đầu đếm ngược
+        startTimer();
 
     } catch (error) {
-        document.getElementById('status-message').textContent = 'Lỗi kết nối hoặc tải đề thi.';
-        console.error("Error starting quiz:", error);
+        statusMessage.textContent = `Lỗi tải đề thi: ${error.message}`;
+        console.error("Error loading quiz:", error);
     }
 }
 
+// Vẽ giao diện câu hỏi
 function renderQuiz() {
     const container = document.getElementById('quiz-container');
-    container.innerHTML = '<h3>Phiếu Trắc Nghiệm</h3>';
+    container.innerHTML = '';
+    
+    currentQuiz.forEach((q, index) => {
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+        questionDiv.id = `q-${q.ID}`;
 
-    quizData.forEach((question, index) => {
-        const questionHtml = `
-            <div class="question" data-id="${question.ID}">
-                <p><strong>Câu ${index + 1}</strong> (${question.MucDo.toUpperCase()} - ${question.ChuDe}): ${question.Cau_hoi}</p>
-                ${question.Hinh_anh ? `<img src="${question.Hinh_anh}" style="max-width: 100%; height: auto; margin-bottom: 10px;">` : ''}
+        // Tiêu đề câu hỏi
+        const qTitle = document.createElement('h4');
+        qTitle.textContent = `Câu ${index + 1}. (ID: ${q.ID}) - ${q.Tieu_de}`;
+        questionDiv.appendChild(qTitle);
+        
+        // Khu vực lựa chọn
+        const optionsDiv = document.createElement('div');
+        optionsDiv.className = 'options';
+        
+        // Danh sách các lựa chọn (A, B, C, D)
+        const optionKeys = ['Dap_an_A', 'Dap_an_B', 'Dap_an_C', 'Dap_an_D'];
+
+        optionKeys.forEach((key, opIndex) => {
+            if (q[key]) { // Chỉ hiển thị nếu có nội dung
+                const optionLabel = document.createElement('label');
+                const optionChar = String.fromCharCode(65 + opIndex); // A, B, C, D
                 
-                <div class="options">
-                    ${renderOption(question.ID, 'A', question.Dap_an_A)}
-                    ${renderOption(question.ID, 'B', question.Dap_an_B)}
-                    ${renderOption(question.ID, 'C', question.Dap_an_C)}
-                    ${renderOption(question.ID, 'D', question.Dap_an_D)}
-                </div>
-            </div>
-        `;
-        container.innerHTML += questionHtml;
+                optionLabel.innerHTML = `
+                    <input type="radio" name="question-${q.ID}" value="${optionChar}">
+                    ${optionChar}. ${q[key]}
+                `;
+                optionsDiv.appendChild(optionLabel);
+            }
+        });
+        
+        questionDiv.appendChild(optionsDiv);
+        container.appendChild(questionDiv);
     });
 
-    container.innerHTML += '<button onclick="submitQuiz(false)" style="margin-top: 20px; background-color: green;">Nộp Bài Kiểm Tra</button>';
+    // Thêm nút nộp bài
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'NỘP BÀI KIỂM TRA';
+    submitButton.onclick = submitQuiz;
+    container.appendChild(submitButton);
 }
 
-function renderOption(questionId, optionKey, optionText) {
-    const fullId = `${questionId}_${optionKey}`;
-    return `
-        <input type="radio" id="${fullId}" name="q_${questionId}" value="${optionKey}" 
-               onchange="saveAnswer('${questionId}', '${optionKey}')">
-        <label for="${fullId}">${optionKey}. ${optionText}</label>
-    `;
-}
-
-function saveAnswer(questionId, answer) {
-    studentAnswers[questionId] = answer;
-}
-
-// --- LOGIC ĐẾM NGƯỢC THỜI GIAN ---
-
+// --- LOGIC ĐỒNG HỒ ĐẾM NGƯỢC ---
 function startTimer() {
-    timeLeft = QUIZ_DURATION_MINUTES * 60; 
-    updateTimerDisplay(); 
+    clearInterval(timerInterval);
+    const timerDisplay = document.getElementById('timer');
     
     timerInterval = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay();
-
-        if (timeLeft <= 0) {
+        const minutes = Math.floor(quizDuration / 60);
+        const seconds = quizDuration % 60;
+        
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        
+        if (quizDuration <= 0) {
             clearInterval(timerInterval);
-            alert("Hết giờ! Bài kiểm tra sẽ được tự động nộp.");
-            submitQuiz(true); // Tự động nộp bài khi hết giờ
+            alert("Hết giờ làm bài! Hệ thống sẽ tự động nộp bài.");
+            submitQuiz(true); // Tự động nộp khi hết giờ
         }
-    }, 1000); 
+        
+        quizDuration--;
+    }, 1000);
 }
 
-function updateTimerDisplay() {
-    const timerElement = document.getElementById('timer');
-    if (!timerElement) return;
+// --- LOGIC NỘP BÀI & GHI KẾT QUẢ (SERVER-SIDE GAS) ---
+async function submitQuiz(isTimeout = false) {
+    clearInterval(timerInterval);
+    document.getElementById('quiz-container').innerHTML = 'Đang chấm bài và lưu kết quả...';
+    document.getElementById('quiz-header').style.display = 'none';
 
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-
-    const formattedTime = 
-        `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    let totalCorrect = 0;
+    const totalQuestions = currentQuiz.length;
+    const studentAnswers = {};
     
-    timerElement.textContent = formattedTime;
-
-    if (timeLeft <= 60) {
-        timerElement.style.color = 'darkred';
-    } else {
-        timerElement.style.color = 'red';
-    }
-}
-
-// --- LOGIC NỘP BÀI ---
-
-async function submitQuiz(isAutoSubmit = false) {
-    // Xác nhận thủ công
-    if (!isAutoSubmit) {
-        if (timeLeft <= 0) {
-            alert("Đã hết giờ làm bài.");
-            return;
-        }
-        if (!confirm("Bạn có chắc chắn muốn nộp bài? Bài làm sẽ được gửi đi và không thể chỉnh sửa!")) {
-            return;
-        }
-    }
-    
-    // Dừng đồng hồ
-    if (timerInterval) {
-        clearInterval(timerInterval);
-    }
-
-    document.getElementById('status-message').textContent = 'Đang chấm điểm và gửi kết quả... Vui lòng không đóng trình duyệt.';
-
-    let correctCount = 0;
-    const totalQuestions = quizData.length;
-    
-    // Chấm điểm
-    quizData.forEach(q => {
-        const studentAns = studentAnswers[q.ID] || ''; 
-        // So sánh với đáp án đúng đã được gửi về (Correct_Answer)
-        if (studentAns.toUpperCase() === q.Correct_Answer.toUpperCase()) {
-            correctCount++;
+    // 1. CHẤM ĐIỂM (CLIENT-SIDE)
+    currentQuiz.forEach(q => {
+        const selected = document.querySelector(`input[name="question-${q.ID}"]:checked`);
+        const studentChoice = selected ? selected.value : null;
+        const correctChoice = correctAnswers[q.ID];
+        
+        studentAnswers[q.ID] = { 
+            answered: studentChoice, 
+            correct: correctChoice, 
+            is_correct: studentChoice === correctChoice 
+        };
+        
+        if (studentChoice === correctChoice) {
+            totalCorrect++;
         }
     });
 
-    const diemSo = (correctCount / totalQuestions) * 10; 
-
-    // Chuẩn bị dữ liệu gửi POST
-    const resultPayload = {
-        Khoi: studentInfo.Khoi,
-        Lop: studentInfo.Lop,
-        STT: studentInfo.STT,
-        HoTen: studentInfo.HoTen,
+    const diemSo = (totalCorrect / totalQuestions) * 10;
+    
+    // 2. CHUẨN BỊ DỮ LIỆU ĐỂ GHI
+    const submissionData = {
+        ...studentInfo,
         BaiKT_ID: document.getElementById('baikt_id').value,
-        DiemSo: diemSo.toFixed(2), 
-        TongSoCauDung: correctCount,
+        DiemSo: diemSo.toFixed(2), // Làm tròn 2 chữ số thập phân
+        TongSoCauDung: totalCorrect,
         TongSoCau: totalQuestions,
-        ChiTietDapAn: studentAnswers 
+        ChiTietDapAn: studentAnswers
     };
-
-    // Gửi dữ liệu bằng phương thức POST
+    
+    // 3. GHI KẾT QUẢ LÊN GOOGLE SHEET QUA GAS (POST)
     try {
-        const result = await callApi({}, 'POST', resultPayload);
+        const result = await callApi({ action: 'submitQuiz' }, 'POST', submissionData);
+        
+        let finalMessage = `
+            <h3>🎉 NỘP BÀI THÀNH CÔNG!</h3>
+            <hr>
+            <p>Họ Tên: ${studentInfo.HoTen}</p>
+            <p>Bài Kiểm Tra: ${document.getElementById('baikt_id').options[document.getElementById('baikt_id').selectedIndex].textContent}</p>
+            <p>Tổng số câu: ${totalQuestions}</p>
+            <p style="font-size: 1.2em; color: green; font-weight: bold;">Số câu trả lời đúng: ${totalCorrect}</p>
+            <p style="font-size: 1.5em; color: #007bff; font-weight: bold;">ĐIỂM SỐ: ${submissionData.DiemSo}</p>
+        `;
 
-        if (result.success) {
-            document.getElementById('quiz-container').innerHTML = `
-                <h2>🎉 HOÀN THÀNH BÀI LÀM 🎉</h2>
-                <p>Họ tên: **${studentInfo.HoTen}**</p>
-                <p>Bài kiểm tra: **${resultPayload.BaiKT_ID}**</p>
-                <p>Số câu đúng: **${correctCount}/${totalQuestions}**</p>
-                <p>Điểm số: **${resultPayload.DiemSo}**</p>
-                <p style="color: green;">Kết quả đã được ghi nhận thành công!</p>
-            `;
-            document.getElementById('quiz-header').style.display = 'none'; // Ẩn đồng hồ
-        } else {
-            throw new Error(result.message || "Lỗi không xác định khi lưu kết quả.");
+        if (isTimeout) {
+            finalMessage += '<p style="color: red;">(Bài nộp tự động do hết giờ)</p>';
         }
 
+        document.getElementById('quiz-container').innerHTML = finalMessage;
+
     } catch (error) {
-        document.getElementById('status-message').textContent = 'LỖI NỘP BÀI: Vui lòng liên hệ giáo viên. ' + error.message;
-        console.error("Lỗi khi nộp bài:", error);
+        document.getElementById('quiz-container').innerHTML = `
+            <h3>LỖI LƯU KẾT QUẢ!</h3>
+            <p>Vui lòng chụp ảnh màn hình này và báo cáo cho giáo viên.</p>
+            <p>Lỗi: ${error.message}</p>
+            <p>Điểm số đã tính (Chưa được lưu): ${submissionData.DiemSo}</p>
+        `;
+        console.error("Error submitting quiz:", error);
     }
 }
+
+// --- THIẾT LẬP SỰ KIỆN ---
+function setupEventListeners() {
+    document.getElementById('khoi').addEventListener('change', loadClassList);
+    document.getElementById('lop').addEventListener('change', lookupName);
+    document.getElementById('stt').addEventListener('input', lookupName);
+}
+
+// Tải dữ liệu học sinh khi DOM được tải xong
+document.addEventListener('DOMContentLoaded', loadStudentData);
+
+// Gán hàm bắt đầu bài kiểm tra vào cửa sổ để HTML có thể gọi
+window.startQuiz = startQuiz;

@@ -1,0 +1,3056 @@
+[
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 1,
+    "TEN": "ĐOÀN PHẠM KHÁNH AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 2,
+    "TEN": "NGUYỄN MAI TRÂM ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 3,
+    "TEN": "PHAN NGỌC VÂN ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 4,
+    "TEN": "TRẦN GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 5,
+    "TEN": "ĐẶNG HUỲNH GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 6,
+    "TEN": "NGUYỄN NGỌC BẢO CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 7,
+    "TEN": "NGUYỄN NGỌC BẢO CHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 8,
+    "TEN": "ĐỖ DUY CƯỜNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 9,
+    "TEN": "NGUYỄN ĐÀO BÁCH DƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 10,
+    "TEN": "PHẠM ĐỨC DƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 11,
+    "TEN": "VÕ NGUYỄN QUỲNH DƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 12,
+    "TEN": "NGUYỄN NHẬT ĐÔNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 13,
+    "TEN": "NGUYỄN HOÀNG GIA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 14,
+    "TEN": "NGUYỄN ĐÀO KHẢ HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 15,
+    "TEN": "NGUYỄN KHÁNH HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 16,
+    "TEN": "NGUYỄN DUY KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 17,
+    "TEN": "TRẦN QUÁCH THIÊN KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 18,
+    "TEN": "ÔN NGỌC GIA LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 19,
+    "TEN": "VŨ NGUYỄN GIA LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 20,
+    "TEN": "NGUYỄN HỮU NHẬT MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 21,
+    "TEN": "BÙI NGUYỆT MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 22,
+    "TEN": "ĐẶNG PHẠM SÔNG MY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 23,
+    "TEN": "VŨ HUY NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 24,
+    "TEN": "LÊ VÕ THÀNH NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 25,
+    "TEN": "MAI KHÁNH NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 26,
+    "TEN": "LÊ KIM OANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 27,
+    "TEN": "NGUYỄN NGỌC PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 28,
+    "TEN": "HUỲNH TẤN PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 29,
+    "TEN": "TRẦN NGỌC PHONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 30,
+    "TEN": "NGÔ ANH PHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 31,
+    "TEN": "VŨ HỮU SANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 32,
+    "TEN": "NGUYỄN ĐÌNH NHẬT THIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 33,
+    "TEN": "NGUYỄN QUANG THUẬN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 34,
+    "TEN": "TRANG THÀNH TIẾN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 35,
+    "TEN": "TRỊNH PHƯƠNG BẢO TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 36,
+    "TEN": "LÊ NHƯ MINH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 37,
+    "TEN": "MAI HOÀNG NHÃ UYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 38,
+    "TEN": "NGUYỄN UY VŨ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.1",
+    "STT": 39,
+    "TEN": "NGUYỄN VIẾT NHẬT VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 1,
+    "TEN": "NGUYỄN THỊ THỦY ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 2,
+    "TEN": "LÝ THÙY ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 3,
+    "TEN": "LÊ GIA ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 4,
+    "TEN": "PHẠM GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 5,
+    "TEN": "TRẦN QUỐC BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 6,
+    "TEN": "ĐẶNG MINH CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 7,
+    "TEN": "HỒ QUỲNH CHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 8,
+    "TEN": "NGUYỄN HẠNH DUNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 9,
+    "TEN": "VŨ TIẾN DŨNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 10,
+    "TEN": "TRẦN TÂN ĐẠI DƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 11,
+    "TEN": "NGUYỄN TÙNG DƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 12,
+    "TEN": "NGUYỄN ĐỨC PHÚC ĐIỀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 13,
+    "TEN": "VÕ HOÀNG GIA HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 14,
+    "TEN": "LÊ NGUYỄN THANH HƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 15,
+    "TEN": "BÙI BẢO KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 16,
+    "TEN": "CAO HOÀNG KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 17,
+    "TEN": "TRƯƠNG HOÀNG LÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 18,
+    "TEN": "TRẦN ĐẶNG KHÁNH LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 19,
+    "TEN": "NGUYỄN TRÚC MAI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 20,
+    "TEN": "NGUYỄN HOÀNG MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 21,
+    "TEN": "TRẦN QUANG THIÊN MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 22,
+    "TEN": "NGUYỄN HÀO NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 23,
+    "TEN": "Bùi Vũ Bảo Nam"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 24,
+    "TEN": "NGUYỄN TẤN DUY NGHĨA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 25,
+    "TEN": "ĐÀO ĐÌNH NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 26,
+    "TEN": "LÊ DUY PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 27,
+    "TEN": "VÕ HOÀNG GIA PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 28,
+    "TEN": "HÀ NGỌC PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 29,
+    "TEN": "NGUYỄN HOÀNG PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 30,
+    "TEN": "VÕ LÊ NHÃ PHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 31,
+    "TEN": "TRẦN ANH THƠ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 32,
+    "TEN": "NGUYỄN BẢO KHÁNH THY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 33,
+    "TEN": "ĐÀO THỦY TIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 34,
+    "TEN": "NGUYỄN LÂM TOÀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 35,
+    "TEN": "NGÔ BẢO TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 36,
+    "TEN": "NGUYỄN THÀNH TRUNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 37,
+    "TEN": "HUỲNH HOA CÁT TƯỜNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 38,
+    "TEN": "TRẦN KIẾN VĂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 39,
+    "TEN": "LÊ NGỌC BẢO VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.2",
+    "STT": 40,
+    "TEN": "NGUYỄN NGỌC NHƯ Ý"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 1,
+    "TEN": "NGUYỄN THÁI AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 2,
+    "TEN": "NGUYỄN NGỌC MAI ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 3,
+    "TEN": "MAI VŨ KỲ ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 4,
+    "TEN": "BÙI HOÀNG GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 5,
+    "TEN": "DƯƠNG NGỌC DIỄM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 6,
+    "TEN": "NGUYỄN LINH ĐAN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 7,
+    "TEN": "TẠ HỒNG ĐỨC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 8,
+    "TEN": "HUỲNH MINH ĐỨC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 9,
+    "TEN": "PHẠM NGỌC LAM HÀ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 10,
+    "TEN": "TRẦN NGỌC HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 11,
+    "TEN": "NGUYỄN ĐỨC HIẾU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 12,
+    "TEN": "NGUYỄN XUÂN HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 13,
+    "TEN": "LÊ NGUYỄN QUỐC HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 14,
+    "TEN": "NGUYỄN PHAN KIM HUYỀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 15,
+    "TEN": "TRẦN NGUYÊN KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 16,
+    "TEN": "ĐOÀN NGUYỄN MINH KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 17,
+    "TEN": "NGUYỄN TRUNG KIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 18,
+    "TEN": "TRẦN BẢO KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 19,
+    "TEN": "ĐÀO NGUYÊN KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 20,
+    "TEN": "LÊ NGỌC LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 21,
+    "TEN": "LÊ TƯỜNG MAI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 22,
+    "TEN": "PHAN BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 23,
+    "TEN": "PHẠM HÀ BÍCH NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 24,
+    "TEN": "Nguyễn Đình Thanh Nguyên"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 25,
+    "TEN": "TRẦN PHÚC NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 26,
+    "TEN": "HUỲNH NGUYỄN Ý NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 27,
+    "TEN": "TRẦN PHẠM AN NHIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 28,
+    "TEN": "NGUYỄN HỒNG XUÂN PHÚ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 29,
+    "TEN": "TRƯƠNG MINH QUANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 30,
+    "TEN": "BÙI ĐÔNG QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 31,
+    "TEN": "ĐỖ NGỌC BẢO QUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 32,
+    "TEN": "LÊ VĂN SANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 33,
+    "TEN": "HOÀNG QUỐC THÁI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 34,
+    "TEN": "NGUYỄN NGỌC MINH TIỀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 35,
+    "TEN": "DƯƠNG NGUYỄN QUẾ TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 36,
+    "TEN": "NGUYỄN HOÀNG THANH TRÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 37,
+    "TEN": "NGUYỄN MINH TÚ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.3",
+    "STT": 38,
+    "TEN": "NGUYỄN THẾ VINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 1,
+    "TEN": "LÊ HOÀNG AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 2,
+    "TEN": "TRẦN PHƯƠNG AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 3,
+    "TEN": "HÀ MINH ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 4,
+    "TEN": "NGUYỄN NGỌC THU ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 5,
+    "TEN": "DOÃN QUỲNH ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 6,
+    "TEN": "NGUYỄN QUỐC GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 7,
+    "TEN": "TRƯƠNG NGUYỄN NGỌC BÍCH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 8,
+    "TEN": "NGUYỄN MINH BẢO CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 9,
+    "TEN": "LÊ MINH DUNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 10,
+    "TEN": "NGUYỄN XUÂN ĐẠT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 11,
+    "TEN": "LÊ THỊ THANH GIANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 12,
+    "TEN": "NGUYỄN THIÊN HẠO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 13,
+    "TEN": "TÔ THANH HIỀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 14,
+    "TEN": "PHẠM GIA HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 15,
+    "TEN": "LÂM NGỌC NHƯ HUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 16,
+    "TEN": "NGUYỄN VIỆT HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 17,
+    "TEN": "BÙI DUY KHA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 18,
+    "TEN": "ĐẶNG MINH KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 19,
+    "TEN": "Phạm Phan Vĩnh Khang"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 20,
+    "TEN": "LÊ ANH KHOA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 21,
+    "TEN": "ĐÀM TUẤN KIỆT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 22,
+    "TEN": "ĐẶNG VÕ MAI LÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 23,
+    "TEN": "Nguyễn Thị Hải Linh"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 24,
+    "TEN": "TRẦN DƯƠNG LỘC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 25,
+    "TEN": "NGUYỄN VÕ KHÁNH MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 26,
+    "TEN": "HOÀNG HẠO NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 27,
+    "TEN": "NGUYỄN KIM BẢO NGÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 28,
+    "TEN": "NGUYỄN NGỌC KIM NGÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 29,
+    "TEN": "ĐỖ NHƯ BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 30,
+    "TEN": "VÕ TRUNG NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 31,
+    "TEN": "NGUYỄN TRỌNG NHÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 32,
+    "TEN": "VŨ NGỌC BẢO NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 33,
+    "TEN": "LÊ LONG PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 34,
+    "TEN": "LÊ XUÂN PHÚ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 35,
+    "TEN": "LÊ ĐẠI PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 36,
+    "TEN": "ĐẶNG UYÊN PHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 37,
+    "TEN": "TRƯƠNG NGUYỄN ĐÔNG QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 38,
+    "TEN": "Trần Nguyễn Trúc Quỳnh"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 39,
+    "TEN": "NGUYỄN THÁI SƠN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 40,
+    "TEN": "HỒ LÂM MINH TÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 41,
+    "TEN": "Trần Duy Tân"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 42,
+    "TEN": "NGUYỄN THỊ THANH THẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 43,
+    "TEN": "THI PHÚC THỊNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 44,
+    "TEN": "TRẦN NGỌC BẢO THÙY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 45,
+    "TEN": "HỒ QUỲNH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 46,
+    "TEN": "NGUYỄN NGỌC PHƯƠNG TRINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 47,
+    "TEN": "NGUYỄN THANH TRÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 48,
+    "TEN": "Trần Lê Minh Tuệ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 49,
+    "TEN": "LÊ NGUYỄN HẢI VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 50,
+    "TEN": "CAO BÁ VỸ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.4",
+    "STT": 51,
+    "TEN": "ĐỖ TRẦN HẢI YẾN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 1,
+    "TEN": "VÕ KHÁNH AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 2,
+    "TEN": "LÊ NGUYỄN BẢO AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 3,
+    "TEN": "LÊ ĐỖ QUẾ ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 4,
+    "TEN": "LƯU HIỂU ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 5,
+    "TEN": "PHẠM LƯƠNG GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 6,
+    "TEN": "TRỊNH AN BÌNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 7,
+    "TEN": "NGUYỄN VŨ MINH CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 8,
+    "TEN": "VÕ HOÀNG PHƯƠNG DUNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 9,
+    "TEN": "HUỲNH GIA HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 10,
+    "TEN": "PHẠM VINH HIỂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 11,
+    "TEN": "NGUYỄN VŨ VIỆT HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 12,
+    "TEN": "TÔ GIA HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 13,
+    "TEN": "NGUYỄN GIA HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 14,
+    "TEN": "TRẦN LÊ TRỌNG KHA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 15,
+    "TEN": "ĐOÀN GIA KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 16,
+    "TEN": "THÁI MINH KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 17,
+    "TEN": "NGUYỄN ĐĂNG KHÔI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 18,
+    "TEN": "NGUYỄN DUY KHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 19,
+    "TEN": "NGUYỄN LÊ TUẤN KIỆT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 20,
+    "TEN": "PHẠM CÔNG HẢI LÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 21,
+    "TEN": "TRẦN HOÀNG KHÁNH LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 22,
+    "TEN": "Nguyễn Mai Linh"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 23,
+    "TEN": "TRẦN THÀNH LỘC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 24,
+    "TEN": "LÊ ĐĂNG MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 25,
+    "TEN": "Trần Trương Phú Minh"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 26,
+    "TEN": "ĐỖ NGUYỄN HÀ MY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 27,
+    "TEN": "NGUYỄN VŨ NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 28,
+    "TEN": "LU NGỌC BẢO NGHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 29,
+    "TEN": "LƯU NGUYỄN HỒNG NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 30,
+    "TEN": "LÊ NỮ BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 31,
+    "TEN": "NGUYỄN TĂNG HOÀNG NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 32,
+    "TEN": "NGUYỄN HUỲNH THANH NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 33,
+    "TEN": "NGÔ HÀ NHIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 34,
+    "TEN": "NGUYỄN TẤN PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 35,
+    "TEN": "Mai An Phú"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 36,
+    "TEN": "TRẦN GIA PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 37,
+    "TEN": "PHAN NGUYỄN HOÀI PHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 38,
+    "TEN": "PHÙNG PHÚ QUÝ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 39,
+    "TEN": "VŨ NGUYỄN ÁI QUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 40,
+    "TEN": "HOÀNG MẠNH THẮNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 41,
+    "TEN": "HUỲNH THANH THÙY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 42,
+    "TEN": "NGUYỄN BẢO ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 43,
+    "TEN": "HOÀNG THỊ PHƯƠNG TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 44,
+    "TEN": "Vũ Huỳnh Bảo Trân"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 45,
+    "TEN": "NGUYỄN NGỌC BẢO TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 46,
+    "TEN": "NGUYỄN KIM TƯỚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 47,
+    "TEN": "NGUYỄN NGỌC NHÃ UYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 48,
+    "TEN": "LÊ NGUYỄN PHƯƠNG VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 49,
+    "TEN": "PHAN TƯỜNG VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.5",
+    "STT": 50,
+    "TEN": "NGUYỄN BÁ NGUYÊN VỸ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 1,
+    "TEN": "TRẦN PHƯƠNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 2,
+    "TEN": "TRẦN GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 3,
+    "TEN": "ĐỖ HOÀNG BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 4,
+    "TEN": "CAO BÁ CHÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 5,
+    "TEN": "ĐỖ QUỐC CƯỜNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 6,
+    "TEN": "TRẦN HỮU ĐỊNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 7,
+    "TEN": "Trần Văn Quang Hải"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 8,
+    "TEN": "LẠI VŨ GIA HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 9,
+    "TEN": "BÙI NGUYỄN MINH HIẾU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 10,
+    "TEN": "NGUYỄN VÕ THÁI HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 11,
+    "TEN": "TRẦN VÕ MẠNH HÙNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 12,
+    "TEN": "TRẦN QUỐC HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 13,
+    "TEN": "NGUYỄN THIÊN HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 14,
+    "TEN": "TRẦN HOÀNG KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 15,
+    "TEN": "HÀ NGUYỄN DUY KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 16,
+    "TEN": "VŨ PHƯỚC LÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 17,
+    "TEN": "TRẦN PHƯƠNG LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 18,
+    "TEN": "LÊ ĐỨC LỢI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 19,
+    "TEN": "HUỲNH MINH MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 20,
+    "TEN": "NGÔ VĂN MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 21,
+    "TEN": "NGÔ LÝ PHƯƠNG MY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 22,
+    "TEN": "TRẦN ĐĂNG NHẬT NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 23,
+    "TEN": "TRẦN HOÀNG BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 24,
+    "TEN": "LÊ NGUYỄN NHƯ NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 25,
+    "TEN": "NGUYỄN THỊ THẢO NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 26,
+    "TEN": "PHẠM HOÀNG YẾN NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 27,
+    "TEN": "TRẦN HẠO NHIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 28,
+    "TEN": "LÊ NGUYỄN LONG PHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 29,
+    "TEN": "NGUYỄN THÁI PHÚ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 30,
+    "TEN": "TRẦN PHẠM KHÁNH PHƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 31,
+    "TEN": "PHẠM NGUYỄN PHÚ QUANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 32,
+    "TEN": "NGUYỄN THỊ BẢO QUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 33,
+    "TEN": "BÙI NGỌC THIÊN THIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 34,
+    "TEN": "TRẦN THỊ THANH THỦY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 35,
+    "TEN": "NGUYỄN NGỌC ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 36,
+    "TEN": "PHAN NGỌC ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 37,
+    "TEN": "LÊ NGỌC MỸ TIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 38,
+    "TEN": "DƯƠNG LƯU THÙY TRANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 39,
+    "TEN": "HUỲNH THỊ THÙY TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 40,
+    "TEN": "TRẦN NGỌC BẢO TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 41,
+    "TEN": "LÊ THỊ BẢO TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 42,
+    "TEN": "HỒ HOÀNG TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 43,
+    "TEN": "LÊ MINH TRỤ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 44,
+    "TEN": "NGUYỄN THANH TRÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 45,
+    "TEN": "ĐỖ THANH VÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 46,
+    "TEN": "PHAN NGUYỄN YẾN VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 47,
+    "TEN": "TRỊNH TUẤN VỸ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.6",
+    "STT": 48,
+    "TEN": "NGUYỄN NGỌC YẾN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 1,
+    "TEN": "PHẠM THỊ NHƯ AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 2,
+    "TEN": "NGUYỄN HOÀNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 3,
+    "TEN": "TRẦN VĂN QUỐC ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 4,
+    "TEN": "Nguyễn Hà Gia Bảo"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 5,
+    "TEN": "VÕ QUÝ BẰNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 6,
+    "TEN": "TẰNG CHÍ CƯỜNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 7,
+    "TEN": "KHƯU TẤN DI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 8,
+    "TEN": "VÕ ANH DŨNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 9,
+    "TEN": "HÀ TRẦN HOÀNG DUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 10,
+    "TEN": "NGUYỄN TRẦN MINH ĐÔ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 11,
+    "TEN": "ĐÀM CHUNG HIẾU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 12,
+    "TEN": "CAO GIA HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 13,
+    "TEN": "TRỊNH GIA HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 14,
+    "TEN": "PHẠM GIA HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 15,
+    "TEN": "TRIỆU TẤN KHẢI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 16,
+    "TEN": "ĐOÀN DUY KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 17,
+    "TEN": "LÊ PHÚC KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 18,
+    "TEN": "HỒNG NGUYỄN LAN KHANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 19,
+    "TEN": "Vương Phạm Đăng Khoa"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 20,
+    "TEN": "Phan Tấn Khôi"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 21,
+    "TEN": "Vương Phạm Tuấn Kiệt"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 22,
+    "TEN": "NGUYỄN TUẤN KIỆT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 23,
+    "TEN": "NGUYỄN PHƯƠNG LAN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 24,
+    "TEN": "NGUYỄN VĨNH LÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 25,
+    "TEN": "NGUYỄN HOÀNG LONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 26,
+    "TEN": "HỒ NGUYỄN CHI MAI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 27,
+    "TEN": "NGUYỄN HỮU HỒNG MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 28,
+    "TEN": "NGUYỄN THỊ TRÀ MY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 29,
+    "TEN": "VŨ THỊ THÚY NGA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 30,
+    "TEN": "PHAN TRỌNG NGHĨA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 31,
+    "TEN": "NGUYỄN HUỲNH THIỆN NGÔN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 32,
+    "TEN": "TRẦN HOÀNG YẾN NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 33,
+    "TEN": "TRẦN NGỌC AN NHIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 34,
+    "TEN": "TRẦN YẾN PHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 35,
+    "TEN": "VÕ NGỌC HỒNG PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 36,
+    "TEN": "NGUYỄN ĐÌNH ANH QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 37,
+    "TEN": "NGUYỄN NGỌC NHƯ QUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 38,
+    "TEN": "ĐOÀN NGỌC TRÚC QUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 39,
+    "TEN": "ĐẶNG THÀNH TÀI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 40,
+    "TEN": "NGUYỄN HỮU QUANG THÁI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 41,
+    "TEN": "NGUYỄN BẢO THIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 42,
+    "TEN": "DƯƠNG NGUYỄN ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 43,
+    "TEN": "PHAN HOÀNG THƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 44,
+    "TEN": "LÊ HOÀNG BẢO TRÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 45,
+    "TEN": "NGÔ MINH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 46,
+    "TEN": "NGUYỄN NGỌC THANH TRÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 47,
+    "TEN": "TRƯƠNG NGỌC KHÁNH VÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 48,
+    "TEN": "PHẠM HOÀNG THÚY VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.7",
+    "STT": 49,
+    "TEN": "HUỲNH NGỌC BẢO XUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 1,
+    "TEN": "PHAN NGỌC KHÁNH AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 2,
+    "TEN": "NGUYỄN MINH ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 3,
+    "TEN": "VÕ NGỌC ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 4,
+    "TEN": "TRẦN GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 5,
+    "TEN": "NGUYỄN QUỐC BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 6,
+    "TEN": "NGUYỄN NGỌC BÍCH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 7,
+    "TEN": "TRẦN TRIỀU CƯỜNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 8,
+    "TEN": "ĐOÀN NGỌC DIỆP"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 9,
+    "TEN": "PHẠM NGỌC TRUNG DŨNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 10,
+    "TEN": "LÊ VŨ DUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 11,
+    "TEN": "NGUYỄN MAI LINH ĐAN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 12,
+    "TEN": "TRẦN NGỌC TRÚC GIANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 13,
+    "TEN": "VŨ MẠNH HIẾU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 14,
+    "TEN": "LÊ GIA HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 15,
+    "TEN": "LÊ NGỌC HUYỀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 16,
+    "TEN": "LÊ TRẦN GIA HƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 17,
+    "TEN": "TRẦN QUANG KHẢI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 18,
+    "TEN": "ĐẶNG HỮU KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 19,
+    "TEN": "NGÔ KIỆN KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 20,
+    "TEN": "NGUYỄN XUÂN QUỐC KHÁNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 21,
+    "TEN": "TRẦN QUANG THẾ KIỆT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 22,
+    "TEN": "TRỊNH HOÀNG LAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 23,
+    "TEN": "LÊ HỒNG NHẬT LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 24,
+    "TEN": "NGUYỄN BẢO LỘC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 25,
+    "TEN": "BÙI ĐOÀN ANH MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 26,
+    "TEN": "NGUYỄN QUANG MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 27,
+    "TEN": "NGUYỄN TRÀ MY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 28,
+    "TEN": "ĐÀO NGỌC NGÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 29,
+    "TEN": "PHẠM MAI TRUNG NGHĨA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 30,
+    "TEN": "BÙI VŨ HỒNG NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 31,
+    "TEN": "PHAN ĐOÀN KHÔI NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 32,
+    "TEN": "LÊ NGUYỄN THIỆN NHÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 33,
+    "TEN": "BÙI TÀI PHÁT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 34,
+    "TEN": "NGUYỄN UY PHONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 35,
+    "TEN": "VŨ BẢO PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 36,
+    "TEN": "HỒ PHẠM THIÊN PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 37,
+    "TEN": "NGUYỄN THỊ DIỄM QUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 38,
+    "TEN": "Mai Thành Tài"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 39,
+    "TEN": "ĐỖ TUẤN THÀNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 40,
+    "TEN": "ĐẶNG NGỌC THIỆN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 41,
+    "TEN": "PHẠM ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 42,
+    "TEN": "ĐINH THANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 43,
+    "TEN": "Ngô Bảo Nhật Thy"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 44,
+    "TEN": "Lê Nguyễn Trân Trân"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 45,
+    "TEN": "TRẦN VŨ MINH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 46,
+    "TEN": "Đinh Đông Triều"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 47,
+    "TEN": "Trần Ngọc Anh Trường"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 48,
+    "TEN": "HỒ VĂN VINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 49,
+    "TEN": "TRẦN ĐÀO LAN VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.8",
+    "STT": 50,
+    "TEN": "ĐÀO NGỌC NHƯ Ý"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 1,
+    "TEN": "BÙI CÔNG THIÊN AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 2,
+    "TEN": "PHAN THỊ KIỀU AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 3,
+    "TEN": "NGUYỄN HOÀNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 4,
+    "TEN": "TRẦN TÚ ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 5,
+    "TEN": "TRỊNH HOÀI ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 6,
+    "TEN": "TRẦN ĐẶNG GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 7,
+    "TEN": "KHƯU QUỐC BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 8,
+    "TEN": "NGUYỄN HOÀNG BẢO CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 9,
+    "TEN": "NGUYỄN TẤN DANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 10,
+    "TEN": "PHẠM DUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 11,
+    "TEN": "ĐỖ TRUNG THÀNH ĐẠT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 12,
+    "TEN": "PHẠM THẾ ĐOÀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 13,
+    "TEN": "LÊ HOÀNG GIA HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 14,
+    "TEN": "TRẦN NGỌC NHÃ HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 15,
+    "TEN": "HÀ THANH HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 16,
+    "TEN": "ĐINH NGỌC HUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 17,
+    "TEN": "Huỳnh Phước Gia Hưng"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 18,
+    "TEN": "ĐINH NGỌC QUỲNH HƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 19,
+    "TEN": "HUỲNH PHÚC KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 20,
+    "TEN": "Nguyễn Trần Phúc Khang"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 21,
+    "TEN": "LÂM GIA KHÁNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 22,
+    "TEN": "BÙI THIÊN KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 23,
+    "TEN": "LƯ GIAI LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 24,
+    "TEN": "Trần Đình Long"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 25,
+    "TEN": "NGUYỄN TIẾN MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 26,
+    "TEN": "TRẦN HOÀNG NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 27,
+    "TEN": "NGUYỄN NHƯ BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 28,
+    "TEN": "ĐÀO THỊ QUÝ NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 29,
+    "TEN": "NGUYỄN KHANG NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 30,
+    "TEN": "NGUYỄN BÙI THANH NHÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 31,
+    "TEN": "NGUYỄN NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 32,
+    "TEN": "NGUYỄN QUỲNH NHƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 33,
+    "TEN": "THÁI HOÀNG PHONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 34,
+    "TEN": "PHẠM HOÀNG PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 35,
+    "TEN": "PHAN HOÀNG THIÊN QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 36,
+    "TEN": "NGUYỄN THỊ NHƯ QUỲNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 37,
+    "TEN": "HUỲNH THẠCH TÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 38,
+    "TEN": "LƯU THANH THẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 39,
+    "TEN": "TRẦN NGỌC THIÊN THIÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 40,
+    "TEN": "VŨ ĐỨC THỊNH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 41,
+    "TEN": "NGUYỄN HOÀNG ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 42,
+    "TEN": "THÂN NGỌC MAI THY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 43,
+    "TEN": "TRẦN MINH TOÀN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 44,
+    "TEN": "NGUYỄN THỊ BÍCH TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 45,
+    "TEN": "ĐẶNG MINH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 46,
+    "TEN": "DƯƠNG MINH TRỌNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 47,
+    "TEN": "NGUYỄN HOÀNG NHẬT UYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 48,
+    "TEN": "PHAN ANH VŨ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 49,
+    "TEN": "NGUYỄN NHẬT VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.9",
+    "STT": 50,
+    "TEN": "NGUYỄN NGỌC NHƯ Ý"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 1,
+    "TEN": "ĐINH PHẠM BÌNH AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 2,
+    "TEN": "VÕ HUỲNH ĐÔNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 3,
+    "TEN": "NGUYỄN LÂM ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 4,
+    "TEN": "HỒ NGỌC PHƯƠNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 5,
+    "TEN": "Nguyễn Thị Lan Anh"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 6,
+    "TEN": "TRƯƠNG THIÊN ÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 7,
+    "TEN": "LÊ CHÍ BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 8,
+    "TEN": "NGUYỄN ĐÌNH GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 9,
+    "TEN": "NGUYỄN NGỌC BẢO CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 10,
+    "TEN": "Hà Thiên Di"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 11,
+    "TEN": "TRẦN BẢO DUY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 12,
+    "TEN": "LÊ TẤN ĐẠT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 13,
+    "TEN": "TRẦN HOÀNG ĐÔN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 14,
+    "TEN": "NGUYỄN GIA BẢO HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 15,
+    "TEN": "TRẦN NGUYỄN NGỌC HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 16,
+    "TEN": "NGÔ HUY HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 17,
+    "TEN": "PHẠM ĐẶNG QUỲNH HƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 18,
+    "TEN": "Ngô Chí Khang"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 19,
+    "TEN": "VŨ ĐĂNG KHOA"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 20,
+    "TEN": "LÊ NGUYỄN THIÊN KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 21,
+    "TEN": "NGUYỄN NGỌC TƯỜNG LAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 22,
+    "TEN": "NGUYỄN ĐỖ BẢO LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 23,
+    "TEN": "ĐỒNG PHÁT TÀI LỘC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 24,
+    "TEN": "PHẠM NGỌC CÁT MINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 25,
+    "TEN": "TRẦN PHƯƠNG HÀ NAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 26,
+    "TEN": "HUỲNH BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 27,
+    "TEN": "NGUYỄN THÁI BẢO NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 28,
+    "TEN": "PHẠM HỒNG NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 29,
+    "TEN": "NGUYỄN THÀNH NHÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 30,
+    "TEN": "NGUYỄN NGỌC YẾN NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 31,
+    "TEN": "TÔ QUỲNH NHƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 32,
+    "TEN": "TRẦN QUỐC PHONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 33,
+    "TEN": "TRẦN BẢO THIÊN PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 34,
+    "TEN": "TRẦN THẾ ANH QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 35,
+    "TEN": "TRẦN TUỆ SAN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 36,
+    "TEN": "PHAN GIA KHIẾT TÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 37,
+    "TEN": "Hoàng Minh Thái"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 38,
+    "TEN": "NGUYỄN CAO PHƯƠNG THẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 39,
+    "TEN": "ĐỒNG LÊ GIA THIỆN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 40,
+    "TEN": "TRƯƠNG NGUYỄN KHÁNH THY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 41,
+    "TEN": "NGUYỄN THỊ MỸ TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 42,
+    "TEN": "NGUYỄN ANH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 43,
+    "TEN": "NGUYỄN NGỌC PHƯƠNG UYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 44,
+    "TEN": "TRẦN THIÊN VŨ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 45,
+    "TEN": "NGUYỄN PHƯƠNG VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.10",
+    "STT": 46,
+    "TEN": "PHẠM NHƯ Ý"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 1,
+    "TEN": "ĐINH THÙY AN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 2,
+    "TEN": "NGUYỄN NGỌC MINH ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 3,
+    "TEN": "VÕ PHẠM HOÀNG ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 4,
+    "TEN": "ĐINH TỐ TÂM ANH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 5,
+    "TEN": "VŨ GIA BÁCH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 6,
+    "TEN": "Nguyễn Gia Bảo"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 7,
+    "TEN": "TRẦN THIÊN BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 8,
+    "TEN": "NGÔ TRẦN GIA BẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 9,
+    "TEN": "NGUYỄN NGỌC BẢO CHÂU"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 10,
+    "TEN": "VÕ K HỒNG DUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 11,
+    "TEN": "TỐNG NGHĨA DANH ĐẠT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 12,
+    "TEN": "LÊ NAM ĐÔNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 13,
+    "TEN": "NGUYỄN HÀ NGỌC HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 14,
+    "TEN": "VŨ NGỌC GIA HÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 15,
+    "TEN": "NGUYỄN VŨ HOÀNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 16,
+    "TEN": "NGUYỄN KHÁNH HƯNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 17,
+    "TEN": "TRÀ MINH KEN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 18,
+    "TEN": "NGUYỄN ĐỨC DUY KHANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 19,
+    "TEN": "NGUYỄN QUỐC KIỆT"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 20,
+    "TEN": "LÊ THIÊN KIM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 21,
+    "TEN": "TRẦN HOÀNG LAM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 22,
+    "TEN": "NGUYỄN NGỌC UYÊN LINH"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 23,
+    "TEN": "DƯƠNG THÁI LUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 24,
+    "TEN": "HUỲNH LÊ THẢO NGÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 25,
+    "TEN": "LÊ KIM KHÁNH NGỌC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 26,
+    "TEN": "PHẠM THẢO NGUYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 27,
+    "TEN": "NGUYỄN THÀNH NHÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 28,
+    "TEN": "TRẦN NGỌC NHI"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 29,
+    "TEN": "Nguyễn Thị Thảo Nhi"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 30,
+    "TEN": "TRẦN TUẤN PHONG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 31,
+    "TEN": "VÕ GIA PHÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 32,
+    "TEN": "VŨ HỒNG QUÂN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 33,
+    "TEN": "NGUYỄN LÊ TẤN SANG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 34,
+    "TEN": "PHAN HỒNG NỮ HUỆ TÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 35,
+    "TEN": "NGUYỄN XUÂN THẢO"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 36,
+    "TEN": "TRẦN VŨ ANH THƠ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 37,
+    "TEN": "PHẠM MINH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 38,
+    "TEN": "PHẠM NGỌC ANH THƯ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 39,
+    "TEN": "VŨ NGUYỄN QUỲNH THY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 40,
+    "TEN": "TRẦN NGUYỄN NGỌC TRÂM"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 41,
+    "TEN": "NGUYỄN HOÀNG MINH TRÍ"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 42,
+    "TEN": "NGUYỄN THANH TRÚC"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 43,
+    "TEN": "NGUYỄN ĐẠI TUẤN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 44,
+    "TEN": "Nguyễn Văn Thanh Tùng"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 45,
+    "TEN": "TRẦN PHƯƠNG UYÊN"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 46,
+    "TEN": "TRIỆU THIÊN VƯƠNG"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 47,
+    "TEN": "NGUYỄN THANH TƯỜNG VY"
+  },
+  {
+    "Khối": "7",
+    "LƠP": "7.11",
+    "STT": 48,
+    "TEN": "PHẠM VÕ THIÊN Ý"
+  }
+]
