@@ -1,5 +1,5 @@
 // ======================================================================
-// quiz.js - LOGIC XỬ LÝ BÀI KIỂM TRA
+// quiz.js - LOGIC XỬ LÝ BÀI KIỂM TRA (ĐÃ SỬA LỖI TÊN CỘT "undefined")
 // ======================================================================
 
 // --- 1. CẤU HÌNH VÀ BIẾN TOÀN CỤC ---
@@ -213,7 +213,7 @@ async function startQuiz() {
     }
 }
 
-// Vẽ giao diện câu hỏi (CÓ XÁO TRỘN ĐÁP ÁN VÀ MÃ HÓA, KHÔNG HIỂN THỊ A, B, C, D)
+// Vẽ giao diện câu hỏi (Đã sửa lỗi undefined)
 function renderQuiz() {
     const container = document.getElementById('quiz-container');
     container.innerHTML = ''; 
@@ -226,9 +226,12 @@ function renderQuiz() {
         questionDiv.className = 'question';
         questionDiv.id = `q-${q.ID}`;
 
-        // 1. Tiêu đề câu hỏi (Mã hóa trước khi thêm vào DOM)
+        // 1. Tiêu đề câu hỏi 
         const qTitle = document.createElement('h4');
-        qTitle.textContent = `Câu ${index + 1}. ${q.Tieu_de}`; 
+        
+        // 🔥 ĐÃ SỬA: Dùng q.Cau_hoi thay vì q.Tieu_de để khớp với Sheet của bạn
+        qTitle.textContent = `Câu ${index + 1}. ${q.Cau_hoi}`; 
+        
         questionDiv.appendChild(qTitle);
         
         // 2. Xử lý các lựa chọn
@@ -249,15 +252,15 @@ function renderQuiz() {
             const optionLabel = document.createElement('label');
             const optionChar = String.fromCharCode(65 + opIndex); // A, B, C, D mới (giá trị nội bộ)
             
-            const encodedContent = opt.content; 
+            const contentToDisplay = opt.content; 
             
-            // KHÔNG HIỂN THỊ KÝ TỰ A, B, C, D TRÊN GIAO DIỆN
+            // Hiển thị nội dung chưa mã hóa (đã sửa lỗi Rot13 trước đó)
             optionLabel.innerHTML = `
                 <input type="radio" 
                        name="question-${q.ID}" 
                        value="${optionChar}" 
                        data-original-key="${opt.key}" > 
-                ${encodedContent}
+                ${contentToDisplay} 
             `;
             optionsDiv.appendChild(optionLabel);
         });
@@ -302,7 +305,8 @@ async function submitQuiz(isTimeout = false) {
             original_key: originalKey, 
             correct: correctChoice, 
             is_correct: isCorrect,
-            question_content: rot13(q.Tieu_de) // Nội dung câu hỏi đã giải mã
+            // 🔥 SỬA: Ghi log nội dung câu hỏi từ q.Cau_hoi
+            question_content: q.Cau_hoi // Nội dung câu hỏi đã giải mã
         };
         
         if (isCorrect) {
