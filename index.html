@@ -136,33 +136,26 @@
 <body>
 
     <div class="container">
-        <h2>BÀI KIỂM TRA GIỮA KÌ MÔN HỌC - KHỐI 7</h2>
+        <h2>BÀI KIỂM TRA GIỮA KÌ TIN HỌC - KHỐI 7</h2>
 
         <div id="info-form">
-            <h3>Xác thực thông tin học sinh</h3>
-
-            <div class="form-group">
-                <label for="khoi">1. Chọn Khối:</label>
-                <select id="khoi" disabled> 
-                    <option value="7" selected>7</option>
-                </select>
-            </div>
+            <h3>Xác thực thông tin học sinh</h3>           
             
             <div class="form-group">
-                <label for="lop">2. Chọn Lớp:</label>
+                <label for="lop">Chọn Lớp:</label>
                 <select id="lop">
                     <option value="">Đang tải danh sách lớp...</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="stt">3. Nhập STT:</label>
+                <label for="stt">Nhập STT:</label>
                 <input type="number" id="stt" min="1" max="50" placeholder="Số thứ tự trong danh sách lớp">
             </div>
 
             <div class="form-group">
-                <label for="hoten">4. Họ Tên Học Sinh:</label>
-                <input type="text" id="hoten" readonly placeholder="Tên sẽ tự động điền sau khi nhập STT">
+                <label for="hoten">Họ Tên Học Sinh:</label>
+                <input type="text" id="hoten" readonly placeholder="Tên tự động điền khi có STT">
             </div>
 
             <button onclick="startQuiz()">BẮT ĐẦU LÀM BÀI</button>
@@ -171,7 +164,7 @@
         </div>
 
         <div id="quiz-header" style="display: none;">
-            <span>Bài: KT Giữa Kì Khối 7</span>
+            <span>Thời gian</span>
             <span id="timer">15:00</span>
         </div>
         
